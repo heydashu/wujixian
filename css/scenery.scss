@@ -1,0 +1,581 @@
+@charset "utf-8";
+@import "common";
+.font-style {
+  font-size: rem(36);
+  font-family: "HYb1gj";
+  color: rgba(156,34,0,1);
+}
+.tips-bg {
+  background: url("../images/scenery/tips.png");
+  background-repeat: no-repeat;
+  background-size: rem(278) auto;
+}
+.tips {
+  position: fixed;
+  bottom: 0;
+  right: rem(8);
+  z-index: 9;
+  bottom: rem(40);
+  height: rem(251);
+  > div {
+    float: left;
+    position: relative;
+    height: 100%;
+  }
+  .text {
+    @extend .tips-bg;
+    width: rem(259/2);
+    background-position: -0 -0;
+    margin-right: rem(46);
+  }
+  .cursor {
+    @extend .tips-bg;
+    width: rem(40);
+    height: rem(32);
+    background-size: rem(238*2) auto;
+    background-position: rem(-348) rem(-284);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+.tips2 {
+  height: rem(162);
+  .text {
+    width: rem(70);
+    // height: rem(285/2);
+    background-position: rem(-130) -0;
+  }
+}
+.tips3 .text {
+  background-position: rem(-204) -0;
+}
+.cursor1 {
+  animation: cursor1 1.5s linear infinite;
+}
+.cursor2 {
+  animation: cursor2 1.5s linear infinite;
+}
+@keyframes cursor1 {
+  to {transform: translateY(-550%)};
+}
+@keyframes cursor2 {
+  to {transform: translateY(-350%)};
+}
+// body {
+//   font-family: "HYb1gj", Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+//   background: #eee url("../images/scenery/p1/bg.jpg") no-repeat center top / cover;
+// }
+.slide1 {
+  position: relative;
+  background: url("../images/scenery/p1/bg.jpg") no-repeat center top / cover;
+  .tit-bg {
+    background-image: url("../images/scenery/p1/tit.png");
+    background-repeat: no-repeat;
+    background-size: rem(602) auto;
+  }
+  .page-1 {
+    @extend .fixed-bg;
+    z-index: 1;
+    .logo {
+      @extend .tit-bg;
+      background-position: rem(-0) rem(-290);
+      width: rem(408/2);
+      height: rem(407/2);
+      margin-top: rem(0);
+      margin-left: rem(30/2);
+      animation-delay: 2.2;
+      img {
+        width: 100%;
+      }
+    }
+    .title {
+      @extend .tit-bg;
+      background-position: rem(-0) rem(-0);
+      width: rem(1190/2);
+      height: rem(579/2);
+      margin-top: rem(40);
+      img {
+        width: 100%;
+      }
+      animation-delay: 2.2s;
+    }
+    .balloon {
+      background: url("../images/scenery/p1/Hotairballoon.png") no-repeat left center / cover;
+      position: absolute;
+      right: 0px;
+      top: rem(-40);
+      transform: translateX(rem(585/2));
+      width: rem(585/2);
+      height: rem(1144/2);
+      animation: balloon 2s linear forwards;
+    }
+    @keyframes balloon {
+      to{transform: translateX(0px)}
+    }
+    // 落叶
+    .leaves {
+      background-image: url("../images/scenery/p1/leaves.png");
+      background-repeat: no-repeat;
+      background-size: rem(696/2) auto;
+    }
+    #yeluobig{
+      position: absolute;
+      transform: translate(300%, -150px) rotate(-60deg) scale(0);
+      @extend .leaves;
+      width: rem(556/2);
+      height: rem(564/2);
+      background-position: -0 -0;
+      animation: luoBig 2s forwards .4s linear;
+    }
+    #yeluolit1{
+      position: absolute;
+      right: 0;
+      transform: translate(200%, 0) rotate(-60deg);
+      @extend .leaves;
+      width: rem(142/2);
+      height: rem(104/2);
+      background-position: rem(-555/2) -0;
+      animation: luoOne 2s forwards .6s linear;
+    }
+    #yeluolit2{
+      position: absolute;
+      right: 0;
+      transform: translate(300%, 0) rotate(-60deg);
+      @extend .leaves;
+      width: rem(66/2);
+      height: rem(82/2);
+      background-position: rem(-555/2) rem(-104/2);
+      animation: luoTwo 2s forwards .8s linear;
+    }
+    @keyframes luoBig {
+      to {transform: translate(145%, -12%) rotate(0deg) scale(1);}
+    }
+    @keyframes luoOne {
+      to { transform: translate(-100%, 550%) rotate(0deg);}
+    }
+    @keyframes luoTwo {
+      to { transform: translate(-710%, 860%) rotate(0deg);}
+    }
+    // 白云
+    .cloud-bg {
+      background: url("../images/scenery/p1/cloud.png");
+      background-repeat: no-repeat;
+      background-size: rem(1133) auto;
+    }
+    .cloud {
+      @extend .cloud-bg;
+      width: 100%;
+      height: rem(1112/2);
+      background-position: rem(-116) rem(-1096/2);
+      position: absolute;
+      z-index: -1;
+      bottom: rem(95*2);
+      > div {
+        @extend .cloud-bg;
+      }
+      .cloud1 {
+        width: rem(1133);
+        height: rem(1483/2);
+        background-position: rem(-180) rem(-2321/2);
+        position: relative;
+        top: rem(60);
+        animation: cloud1 8s infinite 1s linear;
+      }
+      .cloud2 {
+        width: rem(956);
+        height: rem(591/2);
+        background-position: rem(-0) rem(-505/2);
+        position: absolute;
+        top: rem(280);
+        animation: cloud1 8s infinite 3s linear;
+      }
+      .cloud3 {
+        width: rem(445/2);
+        height: rem(505/2);
+        background-position: rem(-0) rem(-0);
+        position: absolute;
+        right: 0;
+        top: rem(290);
+        animation: cloud2 8s infinite 2s linear;
+      }
+    }
+    @keyframes cloud1 {
+      0% { transform: translateX(0px); }
+      50% { transform: translateX(-40px); }
+      100% { transform: translateX(0px); }
+    }
+    @keyframes cloud2 {
+      0% { transform: translateX(0px); }
+      50% { transform: translateX(40px); }
+      100% { transform: translateX(0px); }
+    }
+    .girl {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: rem(1009/2);
+      width: 100%;
+      background: url("../images/scenery/p1/prospect.png") no-repeat left bottom / cover;
+    }
+  }
+  .page-2 {
+    @extend .fixed-bg;
+    z-index: 2;
+    opacity: 0;
+    transition: all .6s;
+    background: url("../images/scenery/p2/bg.jpg") no-repeat center top / cover;
+    .plain-bg {
+      background: url("../images/scenery/p2/plain.png");
+      background-repeat: no-repeat;
+      background-size: rem(1212/2) auto;
+    }
+    .map {
+      width: 100%;
+      height: rem(1086/2);
+      background: url("../images/scenery/p2/map.png") no-repeat center top / cover;
+      margin-top: rem(-54);
+      .line {
+        @extend .plain-bg;
+        width: rem(1212/2);
+        height: rem(370/2);
+        background-position: rem(-0) rem(-0);
+        margin: 0 auto;
+        position: relative;
+        top: rem(576/2);
+        z-index: 2;
+        span {
+          position: absolute;
+          left: -11px;
+          bottom: -11px;
+          width: rem(148/2);
+          height: rem(133/2);
+          animation: plain1 2.5s linear .5s forwards;
+          -webkit-animation: plain1 2.5s linear .5s forwards;
+          transform: rotate(-21deg);
+          i {
+            @extend .plain-bg;
+            background-position: rem(-0) rem(-740/2);
+            display: block;
+            width: rem(148/2);
+            height: rem(133/2);
+            animation: plain2 2.5s cubic-bezier(0.22, 0.46, 0.49, 0.88) .5s forwards;
+            -webkit-animation: plain2 2.5s cubic-bezier(0.22, 0.46, 0.49, 0.88) .5s forwards;
+            position: absolute;
+            top: 0;
+          }
+        }
+      }
+      .line2 {
+        position: relative;
+        top: 67px;
+        background-position: rem(-0) rem(-370/2);
+        z-index: 1;
+        span i {
+          background-position: rem(-148/2) rem(-740/2);
+        }
+      }
+    }
+    @keyframes plain1 {
+      100% {transform: translateX(685%) rotate(18deg);}	
+    }
+    @keyframes plain2 {
+      from { transform: translateY(0); }
+      to { transform: translateY(-265%); }	
+    }
+    @-webkit-keyframes plain1 {
+      100% {transform: translateX(685%) rotate(18deg);}	
+    }
+    @-webkit-keyframes plain2 {
+      from { transform: translateY(0); }
+      to { transform: translateY(-265%); }	
+    }
+    .mapleleaf {
+      @extend .font-style;
+      width: 100%;
+      height: rem(1062);
+      background: url("../images/scenery/p2/mapleleaf.png") no-repeat center top / cover;
+      position: relative;
+      top: rem(-180);
+      .txt-content {
+        padding: rem(400) rem(140) 0 rem(140);
+        text-align: left;
+        line-height: rem(52);
+        color: #fff;
+        text-shadow: 0px 1px 1px #8f2800;
+        font-weight: bold;
+        span {
+          display: block;
+          em {
+            font-style: normal;
+            color: #9c2200;
+            text-shadow: none;
+          }
+        }
+        >em {
+          font-style: normal;
+          color: #9c2200;
+          text-shadow: none;
+        }
+      }
+    }
+  }
+  .page-3 {
+    @extend .fixed-bg;
+    z-index: 3;
+    transition: all .6s;
+    background: url("../images/scenery/p3/bg.png") no-repeat center bottom / cover;
+    opacity: 0;
+    .el-bg {
+      background: url("../images/scenery/p3/element.png");
+      background-repeat: no-repeat;
+      background-size: rem(1185/2) auto;
+    }
+    .slide3-txt {
+      @extend .font-style;
+      @extend .el-bg;
+      text-align: left;
+      margin-left: rem(-36*2);
+      width: rem(364);
+      height: rem(336);
+      color: #003CB0;
+      font-weight: 400;
+      line-height: rem(50);
+      background-position: -0 -0;
+      > p {
+        padding-top: rem(48);
+        padding-left: rem(100 );
+        margin-top: rem(9);
+      }
+    }
+    .el-balloon {
+      @extend .el-bg;
+      width: rem(398/2);
+      height: rem(490/2);
+      background-position: rem(-789/2) -0;
+      position: absolute;
+      top: rem(193/2);
+      right: rem(122/2);
+      animation: ball 6s infinite alternate; 
+    }
+    .el-person {
+      @extend .el-bg;
+      width: rem(324/2);
+      height: rem(425/2);
+      background-position: -0 rem(-725/2);
+      position: absolute;
+      bottom: 0;
+      left: rem(615/2);
+    }
+    .flash-box {
+      position: absolute;
+      bottom: rem(200);
+      height: rem(400);
+      line-height: rem(400);
+      width: 100%;
+      z-index: -1;
+    }
+    .el-flash {
+      animation: falsh 2.6s linear 1s infinite;
+      width: rem(10);
+      height: rem(10);
+      background: #fff;
+      border-radius: 50%;
+      bottom: 1.84rem;
+      z-index: -1;
+      display: inline-block;
+      vertical-align: bottom;
+      opacity: 0;
+    }
+    @keyframes falsh {
+      0% { opacity: 0; }
+      5% { opacity: 1; width: rem(400);  height: rem(400); }
+      10% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    @keyframes ball {
+      from { transform: translateX(-10px); }
+      to { transform: translateX(50px); }	
+    }
+  }
+  .page-4 {
+    @extend .fixed-bg;
+    z-index: 4;
+    transition: all .6s;
+    background: url("../images/scenery/p4/sky.jpg") no-repeat center top / 100%;
+    opacity: 0;
+    .el-bg {
+      background: url("../images/scenery/p4/element.png");
+      background-repeat: no-repeat;
+      background-size: rem(1663/2) auto;
+    }
+    .bg {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      background: url("../images/scenery/p4/bg.png") no-repeat center bottom / 100%;
+    }
+    .txt {
+      @extend .font-style;
+      @extend .el-bg;
+      text-align: left;
+      // margin-top: rem(556);
+      margin-left: rem(-26);
+      width: rem(1055/2);
+      height: rem(913/2);
+      font-weight: 400;
+      line-height: rem(50);
+      background-position: -0 -0;
+      color: #003CB0;
+      position: absolute;
+      bottom: rem(200);
+      > p {
+        padding-top: rem(90);
+        padding-left: rem(106);
+      }
+    }
+    .el-cloud {
+      position: relative;
+    }
+    .el-cloud1 {
+      @extend .el-bg;
+      width: rem(608/2);
+      height: rem(209/2);
+      background-position: rem(-1055/2) -0;
+      animation: c1 6s infinite alternate; 
+    }
+    .el-cloud2 {
+      @extend .el-bg;
+      width: rem(429/2);
+      height: rem(177/2);
+      background-position: rem(-1055/2) rem(-209/2);
+      position: absolute;
+      right: 0;
+      top: rem(100/2);
+      animation: c2 6s infinite 2s alternate;
+    }
+    // 分享
+    .shareLayer {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background:rgba(0,0,0,.7);
+      opacity: 0;
+      .letter {
+        margin: 0 auto;
+        width: rem(726);
+        height: rem(632);
+        background: url("../images/scenery/p5/mapleleaf.png") no-repeat top center / cover;
+        margin-top: rem(300/2);
+        margin-bottom: rem(60);
+        .share-txt {
+          @extend .font-style;
+          padding: rem(126*2) rem(60*2) 0 rem(80*2);
+          text-align: left;
+          line-height: 25px;
+          text-shadow: 0px 1px 1px #8f2800;
+          font-weight: bold;
+          color: #fff;
+        }
+      }
+      .btns {
+        a {
+          display: block;
+          background:linear-gradient(0deg,rgba(16,98,213,1) 0%,rgba(104,189,249,1) 100%);width: rem(508);
+          height: rem(98);
+          line-height: rem(98);
+          border-radius: rem(60);
+          margin: 0 auto;
+          font-size: rem(36);
+          font-family: "yegenyou_jingyun";
+          font-weight: 400;
+          color: #fff;
+          text-decoration: none;
+          em {
+            display: inline-block;
+            position: relative;
+            top: 3px;
+            margin-right: 10px;
+            background-size: rem(119) auto !important;
+          }
+        }
+        .wechat {
+          margin-bottom: rem(60);
+          em {
+            width: rem(16*2);
+            height: rem(17*2);
+            background: url("../images/scenery/p5/shareIcon.png") no-repeat rem(-17*2) rem(-0);
+          }
+        }
+        .scope {
+          background:linear-gradient(0deg,rgba(223,100,25,1) 0%,rgba(254,209,76,1) 100%);
+          em {
+            width: rem(17*2);
+            height: rem(18*2);
+            background: url("../images/scenery/p5/shareIcon.png") no-repeat rem(-0) rem(-0);
+          }
+        }
+        .my-letter {
+          margin-top: rem(60);
+          em {
+            position: relative;
+            top: 1px;
+            width: rem(33);
+            height: rem(30);
+            background: url("../images/ic_congratulations.png") no-repeat center / 100% !important;
+          }
+        }
+      }
+      .close {
+        position: absolute;
+        top: rem(172);
+        right: rem(65);
+        width: rem(60);
+        height: rem(60);
+        background: url("../images/scenery/p5/shareIcon.png") no-repeat rem(-79) rem(-0);
+        background-size: rem(139) auto;
+      }
+    }
+  }
+  .pending-4 {
+    opacity: 0;
+  }
+  @keyframes c1 {
+    0% {transform: translateX(0px)};
+    100% {transform: translateX(-60px)}
+  }
+  @keyframes c2 {
+    0% {transform: translateX(0px)};
+    100% {transform: translateX(50px)}
+  }
+}
+@media screen  and (max-width: 320px) {
+  .shareLayer .letter .share-txt {
+    padding-top: rem(260);
+    line-height: 22px;
+  }
+}
+
+// XR
+@media only screen and (device-width: 414px) and (device-height: 832px) and (-webkit-device-pixel-ratio: 2) {
+  .slide1 .page-2 .mapleleaf {top: 0;}
+  .slide1 .page-4 .el-cloud {margin-top: 50px;}
+  .slide1 .page-4 .el-cloud2 {top: auto; margin-top: 20px;}
+}
+
+// X && XS
+@media only screen and (device-width: 375px) and (device-height: 748px) and (-webkit-device-pixel-ratio: 3) {
+  .slide1 .page-2 .mapleleaf {top: 0;}
+  .slide1 .page-4 .el-cloud {margin-top: 50px;}
+  .slide1 .page-4 .el-cloud2 {top: auto; margin-top: 20px;}
+}
+
+// XS MAX
+@media only screen and (device-width: 414px) and (device-height: 832px) and (-webkit-device-pixel-ratio: 3) {
+  .slide1 .page-2 .mapleleaf {top: 0;}
+  .slide1 .page-4 .el-cloud {margin-top: 50px;}
+  .slide1 .page-4 .el-cloud2 {top: auto; margin-top: 20px;}
+}

@@ -1,0 +1,115 @@
+// rem 换算单位
+$vm_fontsize: 75;
+@function rem($px) {
+  @return ($px / $vm_fontsize / 2) * 1rem;
+}
+$vm_design: 750;
+html {
+  background: #f5f5f5;
+  height: 100%;
+  // 根元素font-size大小使用 vw 单位
+  font-size: ($vm_fontsize / ($vm_design / 2)) * 100vw;
+  @media screen and (max-width: 320px) {
+    font-size: 64px;
+  }
+  @media screen and (min-width: 540px) {
+    font-size: 108px;
+  }
+}
+body {
+  max-width: 540px;
+  min-width: 320px;
+  margin: 0 auto;
+  min-height: 100%;
+  font-size: rem(24);
+  -webkit-text-size-adjust: 100% !important;
+}
+html, body {
+  min-height: 100%;
+  height: 100%;
+  position: relative;
+}
+@font-face {
+  font-family: 'HYb1gj';
+  src: url('../font/HYb1gj.woff2') format('woff2');
+      //  url('../font/HYb1gj.woff')format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+}
+.fixed-bg {
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.hide {
+  display: none;
+}
+.loading {
+  position: absolute;
+  padding-top: 11px;
+  text-align: center;
+  width: 100%;
+  top: 50%;
+  margin-top: -14px;
+}
+.loading div{
+  width: 4px;
+  height: 10px;
+  background-color: #fff;
+  display: inline-block;
+  margin-left:2px; 
+  animation:load 0.5s cubic-bezier(0.77, 0.47, 0.64, 0.28) alternate infinite;
+  -webkit-animation:load 0.5s cubic-bezier(0.77, 0.47, 0.64, 0.28) alternate infinite;
+}
+.loading div:nth-child(1){
+  animation-delay: -0.5s;
+}
+.loading div:nth-child(2){
+  animation-delay: -0.4s;
+}
+.loading div:nth-child(3){
+  animation-delay: -0.3s;
+}
+.loading div:nth-child(4){
+  animation-delay: -0.2s;
+}
+.loading div:nth-child(5){
+  animation-delay: -0.1s;
+}
+@keyframes load{
+  from{transform:scaleY(1);}
+  to{transform:scaleY(3);}
+}
+@-webkit-keyframes load{
+  from{transform:scaleY(1);}
+  to{transform:scaleY(3);}
+}
+
+#handlerBtn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 9999;
+  width: rem(60);
+  height: rem(60);
+  background: url("../images/music.png") no-repeat center / cover;
+}
+.m-play {
+  animation: music 4s linear infinite;
+}
+.m-pause {
+  animation-play-state: paused;
+}
+@keyframes music {
+  to {transform: rotate(180deg)}
+}

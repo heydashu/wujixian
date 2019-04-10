@@ -1,0 +1,774 @@
+@charset "utf-8";
+@import "common";
+.tips-bg {
+  background: url("../images/hope/promp.png");
+  background-repeat: no-repeat;
+  background-size: rem(350) auto;
+}
+.tips {
+  position: fixed;
+  bottom: 0;
+  right: rem(8);
+  z-index: 9;
+  bottom: rem(20);
+  height: rem(251);
+  > div {
+    float: left;
+    position: relative;
+    height: 100%;
+  }
+  .text {
+    @extend .tips-bg;
+    width: rem(136);
+    background-position: -0 -0;
+    margin-right: rem(46);
+  }
+  .cursor {
+    @extend .tips-bg;
+    width: rem(40);
+    height: rem(32);
+    background-size: rem(290) auto;
+    background-position: rem(-62*2) rem(-85*2);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+.tips2 {
+  height: rem(162);
+  .text {
+    width: rem(74);
+    background-position: rem(-180) -0;
+  }
+}
+.tips3 .text {
+  background-position: rem(-276) -0;
+}
+.cursor1 {
+  animation: cursor1 1.5s linear infinite;
+}
+.cursor2 {
+  animation: cursor2 1s linear infinite;
+}
+@keyframes cursor1 {
+  to {transform: translateY(rem(-105*2))};
+}
+@keyframes cursor2 {
+  to {transform: translateY(-360%)};
+}
+
+
+.font-style {
+  font-size: rem(36);
+  font-family: "HYb1gj";
+  font-weight: 400;
+  color:rgba(87,53,32,1);
+}
+.slide1 {
+  position: relative;
+  background: url("../images/hope/p1/bg.jpg") no-repeat center top / cover;
+  .page-1 {
+    @extend .fixed-bg;
+    z-index: 1;
+    .elephant {
+      width: rem(727);
+      height: rem(860);
+      background: url("../images/hope/p1/elephant.png") no-repeat center top / cover;
+      position: absolute;
+      bottom: 0;
+      z-index: 2;
+    }
+    .leaf {
+      animation-delay: 1s;
+      position: absolute;
+      z-index: 2;
+      background-repeat: no-repeat;
+      background-size: rem(1589) auto;
+      background-image: url("../images/hope/p1/plant.png");
+    }
+    .leaf-bottom {
+      width: rem(596);
+      height: rem(312);
+      bottom:  -1px;
+      right: -1px;
+      z-index: 9;
+      background-position: rem(-993) -0;
+    }
+    .leaf-top {
+      width: rem(230);
+      height: rem(272);
+      background-position: rem(-135) -0;
+      right: 0;
+      top: 0;
+    }
+    // 落叶
+    .leaves-box {
+      @extend .fixed-bg;
+      z-index: 3;
+    }
+    #ye1{
+      @extend .leaf;
+      position: absolute;
+      top: -50px;
+      left: 35%;
+      transform: translate(0, 0) rotate(-60deg) scale(0);
+      width: rem(80);
+      height: rem(106);
+      background-position: rem(-490) -0;
+      animation: luo1 6s infinite .8s linear;
+    }
+    #ye2{
+      @extend .leaf;
+      position: absolute;
+      top: -38px;
+      left: 65%;
+      transform: translate(0, 0) rotate(-60deg) scale(0.2);
+      width: rem(76);
+      height: rem(64);
+      background-position: rem(-420) -0;
+      animation: luo2 7s infinite 1s linear;
+    }
+    #ye3{
+      @extend .leaf;
+      position: absolute;
+      right: -50px;
+      top: rem(378*2);
+      transform: translate(0, -200px) rotate(-60deg) scale(0);
+      width: rem(55);
+      height: rem(83);
+      background-position: rem(-184*2) -0;
+      animation: luo3 6s infinite 1.2s linear;
+    }
+    #ye4{
+      @extend .leaf;
+      position: absolute;
+      right: -50px;
+      top: rem(378*2);
+      transform: translate(0, -200px) rotate(-60deg) scale(0);
+      width: rem(80);
+      height: rem(105);
+      background-position: rem(-288*2) -0;
+      animation: luo4 6s infinite 1.2s linear;
+    }
+    @keyframes luo1 {
+      to {transform: translate(-390%, 360%) rotate(0deg) scale(1);}
+    }
+    @keyframes luo2 {
+      to { transform: translate(-800%, 900%) rotate(0deg) scale(1);}
+    }
+    @keyframes luo3 {
+      to { transform: translate(-480%, 410%) rotate(0deg) scale(1);}
+    }
+    @keyframes luo4 {
+      to { transform: translate(-558%, 480%) rotate(0deg) scale(1);}
+    }
+    #ye5 {
+      @extend .leaf;
+      animation-delay: 1.2s;
+      width: rem(337);
+      height: rem(350);
+      background-position: rem(-656) -0;
+      position: absolute;
+      bottom: rem(360);
+      left: rem(42);
+      z-index: 0;
+    }
+    #ye6 {
+      @extend .leaf;
+      animation-delay: 1.2s;
+      width: rem(135);
+      height: rem(177);
+      background-position: -0 -0;
+      position: absolute;
+      bottom: rem(255*2);
+      left: rem(460);
+      z-index: 1;
+    }
+    // 白云
+    .cloud-bg {
+      background: url("../images/hope/p1/cloud.png");
+      background-repeat: no-repeat;
+      background-size: rem(641) auto;
+    }
+    .cloud {
+      @extend .fixed-bg;
+      width: 100%;
+      height: rem(389);
+      > div {
+        @extend .cloud-bg;
+      }
+      .cloud1 {
+        width: rem(213);
+        height: rem(114);
+        background-position: rem(-181) -0;
+        position: absolute;
+        right: rem(60);
+        top: rem(107);
+        animation: cloud1 8s infinite 1s linear;
+      }
+      .cloud2 {
+        width: rem(181);
+        height: rem(95);
+        background-position: -0 -0;
+        position: absolute;
+        top: rem(336);
+        right: rem(26);
+        animation: cloud1 8s infinite 3s linear;
+      }
+      .cloud3 {
+        width: rem(247);
+        height: rem(130);
+        background-position: rem(-394) -0;
+        position: absolute;
+        left: rem(4);
+        top: rem(304);
+        animation: cloud2 8s infinite 2s linear;
+      }
+    }
+    @keyframes cloud1 {
+      0% { transform: translateX(0px); }
+      50% { transform: translateX(-40px); }
+      100% { transform: translateX(0px); }
+    }
+    @keyframes cloud2 {
+      0% { transform: translateX(0px); }
+      50% { transform: translateX(40px); }
+      100% { transform: translateX(0px); }
+    }
+  }
+  .page-2 {
+    @extend .fixed-bg;
+    z-index: 2;
+    opacity: 0;
+    background-color: #5EB23B;
+  }
+  .page-3 {
+    @extend .fixed-bg;
+    z-index: 3;
+    transition: all .6s;
+    background: url("../images/hope/p3/bg.jpg") no-repeat center bottom / cover;
+    opacity: 0;
+    .slide3-txt {
+      @extend .font-style;
+      text-align: left;
+      margin-top: rem(80);
+      font-size: rem(32);
+      width: rem(385);
+      height: rem(272);
+      background: url("../images/hope/p3/notep.png") no-repeat center / cover;
+      > p {
+        padding-top: rem(52);
+        padding-left: rem(66);
+        line-height: rem(48);
+      }
+    }
+    .cloud {
+      background: url("../images/hope/p3/cloud.png");
+      background-repeat: no-repeat;
+      background-size: rem(632) auto;
+    }
+    .cloud1 {
+      width: rem(288);
+      height: rem(248);
+      background-position: -0 -0;
+      position: absolute;
+      left: 0;
+      top: rem(10);
+      animation: cloud1 6s infinite 1s linear;
+      z-index: -1;
+    }
+    .cloud2 {
+      width: rem(338);
+      height: rem(248);
+      background-position: rem(-294) -0;
+      position: absolute;
+      top: rem(10);
+      right: rem(0);
+      animation: cloud2 7s infinite 0s linear;
+    }
+    .tree-bg {
+      background: url("../images/hope/p3/el-tree.png");
+      background-repeat: no-repeat;
+      background-size: rem(804) auto;
+    }
+    .tree {
+      @extend .tree-bg;
+      position: absolute;
+    }
+    .tree1 {
+      width: rem(211);
+      height: rem(228);
+      background-position: rem(-233) rem(-499);
+      top: rem(53);
+      right: 0;
+    }
+    .tree2 {
+      width: rem(320);
+      height: rem(331);
+      background-position: rem(-486) -0;
+      bottom: -1px;
+      left: -1px;
+    }
+    .tree3 {
+      width: rem(233);
+      height: rem(293);
+      background-position: -0 rem(-499);
+      bottom: -1px;
+      right: -1px;
+      z-index: 2;
+    }
+    .water1 {
+      animation-delay: 0.4s;
+      bottom: rem(410*2);
+      right: 0;
+      width: rem(218);
+      height: rem(126);
+      background-position: rem(-486) rem(-331);
+    }
+    .water2 {
+      animation-delay: 0.4s;
+      left: rem(100);
+      bottom: rem(82);
+      width: rem(484);
+      height: rem(499);
+      background-position: -0 -0;
+    }
+    .person {
+      background: url("../images/hope/p3/el-person.png");
+      background-repeat: no-repeat;
+      background-size: rem(1975) auto;
+      position: absolute;
+    }
+    .person1 {
+      width: rem(672);
+      height: rem(455);
+      background-position: rem(-1303) -0;
+      left: 0;
+      bottom: rem(350);
+      animation-delay: 0.4s;
+    }
+    .person2 {
+      width: rem(297);
+      height: rem(529);
+      background-position: -0 -0;
+      left: rem(30);
+      bottom: rem(136);
+      animation-delay: 0.6s;
+    }
+    .person3 {
+      width: rem(535);
+      height: rem(592);
+      background-position: rem(-768) -0;
+      right: 0;
+      bottom: rem(232);
+      animation-delay: 0.8s;
+      animation-duration: 1.2s;
+    }
+    .person4 {
+      width: rem(471);
+      height: rem(488);
+      background-position: rem(-297) -0;
+      position: absolute;
+      left: rem(280);
+      bottom: 0;
+      animation-delay: 1s;
+      animation-duration: 1s;
+    }
+    .bird {
+      width: rem(419);
+      height: rem(241);
+      background: url("../images/hope/p3/bird.png") no-repeat center / cover;
+      position: absolute;
+      top: rem(61);
+      left: rem(256);
+    }
+    // 闪光
+    .el-flash {
+      animation: falsh 2.6s linear 1s infinite;
+      width: rem(10);
+      height: rem(10);
+      background: #fff;
+      border-radius: 50%;
+      bottom: 1.84rem;
+      z-index: -1;
+      display: inline-block;
+      vertical-align: bottom;
+      opacity: 0;
+    }
+    .selfie {
+      position: absolute;
+      left: rem(320);
+      bottom: rem(422);
+    }
+    @keyframes falsh {
+      0% { opacity: 0; }
+      5% { opacity: 1; width: rem(100);  height: rem(100); }
+      10% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+  }
+  .page-4 {
+    @extend .fixed-bg;
+    z-index: 4;
+    transition: all .6s;
+    background: url("../images/hope/p4/bg.jpg") no-repeat top center / cover;
+    opacity: 0;
+    .txt {
+      @extend .font-style;
+      text-align: left;
+      margin-top: rem(360);
+      margin-left: rem(-16);
+      width: rem(423);
+      height: rem(299);
+      position: relative;
+      z-index: 2;
+      font-size: rem(32);
+      background: url("../images/hope/p4/notep.png") no-repeat center / cover;
+      animation-delay: 1.4s;
+      > p{
+        padding-top: rem(58);
+        padding-left: rem(66);
+        line-height: rem(48);
+      }
+    }
+    .show {
+      background: url("../images/hope/p4/person.png");
+      background-repeat: no-repeat;
+      background-size: rem(1480) auto;
+      position: absolute;
+    }
+    .dancer-bg {
+      height: rem(353);
+      width: 100%;
+      position: absolute;
+      bottom: rem(250);
+      background: url("../images/hope/p4/stage.png") no-repeat center / cover;
+    }
+    .dancer {
+      width: rem(730);
+      height: rem(574);
+      background-position: -0 -0;
+      bottom: rem(520);
+      transform: translateX(-45%);
+    }
+    .dancing {
+      animation: dancing 1s forwards .3s linear;
+    }
+    @keyframes dancing {
+      to {transform: translateX(0);}
+    }
+    .desk1 {
+      width: rem(176);
+      height: rem(590);
+      background-position: -0 rem(-574);
+      bottom: rem(46);
+      animation-delay: .2s;
+    }
+    .desk2 {
+      width: rem(204);
+      height: rem(431);
+      background-position: rem(-176) rem(-574);
+      bottom: rem(170);
+      right: 0;
+      animation-delay: .4s;
+    }
+    .desk3 {
+      width: rem(750);
+      height: rem(473);
+      background-position: rem(-730) -0;
+      right: 0;
+      bottom: 0;
+      animation-delay: .5s;
+    }
+    .smoke {
+      border-radius: 50%;
+      -webkit-animation: roastSmoke 3s ease-in-out infinite;
+      animation: roastSmoke 3s ease-in-out infinite;
+      background-image: -webkit-radial-gradient(ellipse at center center, rgba(255,255,255, 0.9) 0%, rgba(0, 0, 0, 0) 50%);
+      background-image: -webkit-radial-gradient(center center, ellipse, rgba(255,255,255, 0.9) 0%, rgba(0, 0, 0, 0) 50%);
+      background-image: radial-gradient(ellipse at center center, rgba(255,255,255, 0.9) 0%, rgba(255, 38, 0, 0) 50%);
+      position: absolute;
+      bottom: rem(50);
+      right: rem(70);
+      width: 160px;
+      height: 120px;
+    }
+    .smoke:before {
+      content: '';
+      border-radius: 50%;
+      -ms-transform: scale(1.6);
+      -webkit-transform: scale(1.6);
+      transform: scale(1.6);
+      background-image: -webkit-radial-gradient(ellipse at center center, rgba(255,255,255, 0.9) 0%, rgba(0, 0, 0, 0) 50%);
+      background-image: -webkit-radial-gradient(center center, ellipse, rgba(255,255,255, 0.9) 0%, rgba(0, 0, 0, 0) 50%);
+      background-image: radial-gradient(ellipse at center center, rgba(255,255,255, 0.9) 0%, rgba(0, 0, 0, 0) 50%);
+      position: absolute;
+      top: -90px;
+      left: 0;
+      display: block;
+      width: 100px;
+      height: 60px;
+    }
+    @keyframes roastSmoke {
+      0% {
+        -webkit-transform: scale(0.2) translateY(0);
+        transform: scale(0.2) translateY(0);
+        // filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+        opacity: 0;
+      }
+      30% {
+        opacity: 1;
+      }
+      100% {
+        -webkit-transform: scale(1) translateY(-100px);
+        transform: scale(1) translateY(-100px);
+        opacity: 0;
+      }
+    }
+    // 分享
+    .shareLayer {
+      @extend .fixed-bg;
+      background:rgba(0,0,0,.7);
+      opacity: 0;
+      .letter {
+        margin: 0 auto;
+        width: rem(532);
+        height: rem(657);
+        background: url("../images/hope/p5/Pop-ups.png") no-repeat top center / cover;
+        margin-top: rem(93);
+        padding: rem(52) rem(62);
+        .share-txt {
+          @extend .font-style;
+          text-align: left;
+          font-size: rem(30);
+          color: #fff;
+          margin-top: rem(400);
+          line-height: rem(56);
+        }
+      }
+      .btns {
+        a {
+          display: block;
+          background:linear-gradient(0deg, #ef9826 0%, #ffe65e 100%);
+          width: rem(527);
+          height: rem(98);
+          line-height: rem(98);
+          border-radius: rem(60);
+          margin: 0 auto;
+          font-size: rem(36);
+          font-family: "HYb1gj";
+          font-weight: 400;
+          color:#DE5815;
+          text-decoration: none;
+          margin-top: rem(60);
+          em {
+            display: inline-block;
+            position: relative;
+            top: 2px;
+            margin-right: 5px;
+            background-size: rem(139) auto !important;
+            position: relative;
+            top: 4px;
+          }
+        }
+        .wechat {
+          em {
+            width: rem(40);
+            height: rem(41);
+            background: url("../images/hope/p5/shareIcon.png") no-repeat rem(-39) rem(-0);
+          }
+        }
+        .scope {
+          background:linear-gradient(0deg,rgba(63,137,34,1) 0%,rgba(95,198,50,1) 97%);
+          color: #fff;
+          em {
+            width: rem(39);
+            height: rem(40);
+            background: url("../images/hope/p5/shareIcon.png") no-repeat rem(-0) rem(-0);
+          }
+        }
+        .my-letter {
+          margin-top: rem(60);
+          em {
+            position: relative;
+            top: 1px;
+            width: rem(35);
+            height: rem(32);
+            background: url("../images/ic_congratulations_on.png") no-repeat center / 100% !important;
+          }
+        }
+      }
+      .close {
+        position: absolute;
+        top: rem(172);
+        right: rem(65);
+        width: rem(60);
+        height: rem(60);
+        background: url("../images/hope/p5/shareIcon.png") no-repeat rem(-79) rem(-0);
+        background-size: rem(139) auto;
+      }
+    }
+  }
+  .pending-3, .pending-4 {
+    opacity: 0;
+  }
+  .letter {
+    background: url("../images/hope/p2/stationery.png") no-repeat top center / cover;
+    width: rem(620);
+    height: rem(752);
+    margin: rem(150) auto auto;
+    text-align: left;
+    padding: rem(42) rem(84);
+    box-sizing: border-box;
+    @extend .font-style;
+    p {
+      margin: 0;
+      line-height: rem(60);
+      span {
+        display: block;
+        line-height: rem(46);
+        margin-bottom: rem(8);
+        em {
+          font-style: normal;
+          color: #ff6b22;
+          font-weight: 500;
+        }
+      }
+      > em {
+        font-style: normal;
+        color: #ff6b22;
+        font-weight: 500;
+      }
+    }
+  }
+  .envelope {
+    width: rem(652);
+    height: rem(843);
+    margin-left: rem(98);
+    position: absolute;
+    bottom: rem(138*2);
+    z-index: 1;
+    animation-delay: 0.6s;
+    background: url("../images/hope/p1/envelope_top.png") no-repeat center / cover;
+    .title {
+      margin: rem(200) 0 0 rem(80);
+      width: rem(444);
+      height: rem(240);
+      background: url("../images/hope/p1/title.png") no-repeat center / cover;
+      position: absolute;
+    }
+  }
+  .envelope2 {
+    position: relative;
+    top: rem(-246);
+    width: rem(690);
+    height: rem(650);
+    margin: 0 auto;
+    img {
+      width: 100%;
+      position: relative;
+      z-index: 9;
+    }
+    // background: url("../images/hope/p2/envelope.png") no-repeat center / cover;
+    div {
+      position: absolute;
+      background-image: url("../images/hope/p2/gift.png");
+      background-repeat: no-repeat;
+      background-size: rem(1166) auto;
+    }
+    #gift1 {
+      width: rem(289);
+      height: rem(318);
+      background-position: rem(-224) rem(-0);
+      left: rem(0);
+      top: rem(-82);
+      z-index: 4;
+      animation-delay: .3s;
+    }
+    #gift2 {
+      width: rem(347);
+      height: rem(378);
+      background-position: rem(-818) rem(-0);
+      left: auto;
+      right: rem(-14);
+      z-index: 3;
+      top: rem(-84);
+      animation-delay: .5s;
+    }
+    #gift3 {
+      width: rem(305);
+      height: rem(304);
+      background-position: rem(-513) rem(-0);
+      left: rem(104);
+      z-index: 2;
+      top: rem(-42);
+      animation-delay: .4s;
+    }
+    #gift4 {
+      width: rem(224);
+      height: rem(223);
+      background-position: rem(-0) rem(-0);
+      left: rem(290);
+      z-index: 1;
+      top: rem(-80);
+      animation-delay: .6s;
+    }
+  }
+  .fruits-bg {
+    background-repeat: no-repeat;
+    background-size: rem(998) auto;
+    background-image: url("../images/hope/p2/fruits.png");
+  }
+  .fruits-top {
+    @extend .fruits-bg;
+    width: rem(245);
+    height: rem(204);
+    background-position: -0 -0;
+    position: absolute;
+    top: rem(34);
+    animation-delay: .6s;
+  }
+  .fruits-bottom {
+    @extend .fruits-bg;
+    height: rem(404);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-position: rem(-245) -0;
+    z-index: 99;
+  }
+}
+
+// XR.   414 || 896 || 2
+@media only screen and (device-width: 414px) and (device-height: 832px) and (-webkit-device-pixel-ratio: 2) {
+  .slide1 .page-2 .letter {margin-top: rem(118*2);}
+  .slide1 .page-3 .slide3-txt {margin-top: rem(110*2);}
+  .slide1 .page-4 .txt {margin-top: rem(500);}
+  .slide1 .page-4 .desk1 {bottom:rem(160);}
+  .slide1 .page-4 .desk2 {bottom:rem(256);}
+  .slide1 .page-4 .dancer-bg {bottom: rem(380); }
+  .slide1 .page-4 .dancer {bottom: rem(660); }
+}
+
+// X && XS.   375 || 812 || 3
+@media only screen and (device-width: 375px) and (device-height: 748px) and (-webkit-device-pixel-ratio: 3) {
+  .slide1 .page-2 .letter {margin-top: rem(118*2);}
+  .slide1 .page-3 .slide3-txt {margin-top: rem(110*2);}
+  .slide1 .page-4 .txt {margin-top: rem(500);}
+  .slide1 .page-4 .desk1 {bottom:rem(160);}
+  .slide1 .page-4 .desk2 {bottom:rem(256);}
+  .slide1 .page-4 .dancer-bg {bottom: rem(380); }
+  .slide1 .page-4 .dancer {bottom: rem(660); }
+}
+
+// XS MAX.   414 || 896 || 3
+@media only screen and (device-width: 414px) and (device-height: 832px) and (-webkit-device-pixel-ratio: 3) {
+  .slide1 .page-2 .letter {margin-top: rem(118*2);}
+  .slide1 .page-3 .slide3-txt {margin-top: rem(110*2);}
+  .slide1 .page-4 .dancer {bottom:rem(654);}
+  .slide1 .page-4 .txt {margin-top: rem(500);}
+  .slide1 .page-4 .desk1 {bottom:rem(160);}
+  .slide1 .page-4 .desk2 {bottom:rem(256);}
+  .slide1 .page-4 .dancer-bg {bottom: rem(380); }
+}

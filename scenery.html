@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>风光之旅</title>
+    <!-- <link rel="stylesheet" href="./css/swiper.min.css"> -->
+    <!-- <link rel="stylesheet" href="./css/animate.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/css/swiper.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.7.0/animate.min.css" >
+    <link rel="stylesheet" href="./css/scenery.css">
+</head>
+<body>
+<!-- 背景音乐 -->
+<audio src="./images/audio.mp3" id="audio" preload="auto" loop>该浏览器不支持audio属性</audio>
+<div id="handlerBtn" class="m-play"></div>
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide slide1">
+            <div class="page-1">
+                <div class="logo animated fadeIn"></div>
+                <div class="title animated fadeIn"></div>
+                <!-- 热气球 -->
+                <div class="balloon"></div>
+                <!-- 落叶 -->
+                <div class="leaves">
+                    <div id="yeluobig"></div>
+                    <div id="yeluolit1"></div>
+                    <div id="yeluolit2"></div>
+                </div>
+                <!-- 白云 -->
+                <div class="cloud">
+                    <div class="cloud1"></div>
+                    <div class="cloud2"></div>
+                    <div class="cloud3"></div>
+                </div>
+                <div class="girl"></div>
+            </div>
+            <div class="page-2">
+                <div class="map">
+                    <div class="">
+                        <span><i></i></span>
+                    </div>
+                    <div class="line2">
+                        <span><i></i></span>
+                    </div>
+                </div>
+                <div class="mapleleaf">
+                    <p class="txt-content hide" id="s2Source"><span></span>鉴于您在2018年度取得了优异的销售成绩，谨以此表示恭贺，并邀您参加无限极<em>2019年度海外培训风光之旅活动！</em></p>
+                    <p class="txt-content" id="s2Output"></p>
+                </div>
+            </div>
+            <div class="pending-3">
+                <div class="slide3-txt animated">
+                    <p id="s3Source" class="hide">不凡的旅程，<br>独特的感悟！<br>贵族的体验，<br>心灵的升华！<br></p>
+                    <p id="s3Output"></p>
+                </div>
+                <div class="el-balloon"></div>
+                <div class="el-person"></div>
+                <div class="flash-box">
+                    <div class=""></div>
+                </div>
+            </div>
+            <div class="pending-4">
+                <div class="el-cloud">
+                    <div class="el-cloud1"></div>
+                    <div class="el-cloud2"></div>
+                </div>
+                <div class="bg">
+                    <div class="txt animated">
+                        <p id="s4Source" class="hide">学会旅行，收获感悟，<br>发现全新的自己！<br>坚定信念，掌控未来，<br>追求更高的梦想！</p>
+                        <p id="s4Output"></p>
+                    </div>
+                </div>
+                
+                <!-- 分享 -->
+                <div class="shareLayer animated">
+                    <div class="letter animated">
+                        <p class="share-txt">马上查看我的海外培训积分，为自己制定目标，和更多伙伴一起带着梦想去旅行！</p>
+                    </div>
+                    <div class="btns">
+                        <!-- <a class="wechat" href="javascript:;"><em></em>晒一下</a> -->
+                        <a class="scope" href="javascript:;"><em></em>看积分</a>
+                        <a class="wechat my-letter" href="javascript:;"><em></em>我的恭贺函</a>
+                    </div>
+                    <a href="javascript:;" class="close"></a>
+                </div>
+            </div>
+            <div class="tips">
+                <div class="text"></div>
+                <div class="cursor"></div>
+            </div>
+        </div>
+        <div class="swiper-slide slide2"></div>
+        <div class="swiper-slide slide3"></div>
+        <div class="swiper-slide slide4"></div>
+        <div class="swiper-slide slide5"></div>
+    </div>
+</div>
+
+<!-- <script src="./js/zepto.min.js"></script> -->
+<!-- <script src="./js/swiper.min.js"></script> -->
+<script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/js/swiper.min.js"></script>
+<script src="./js/effectScenery.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="https://cdn.bootcss.com/Mock.js/1.0.0/mock-min.js"></script>   <!-- 模拟数据，在获取真实数据时删除 -->
+<script>
+    // 背景音乐
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('OK', document.getElementById('audio'))
+        function audioAutoPlay() {
+            var audio = document.getElementById('audio');
+                audio.play();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                audio.play();
+            }, false);
+        }
+        audioAutoPlay();
+    });
+
+    var audio = document.getElementById('audio');
+    $("#handlerBtn").bind("touchstart", function () {
+        if(audio !== null) {
+        //检测播放是否已暂停.audio.paused 在播放器播放时返回false.
+        if(audio.paused) {
+            audio.play(); // 播放
+            $("#handlerBtn").attr('class', 'm-play');
+        } else {
+            audio.pause(); // 暂停
+            $("#handlerBtn").attr('class', 'm-play m-pause');
+        }
+        }
+    })
+
+    $(function(){
+        // 模拟数据 Start ---- 生产环境删除
+        Mock.mock('http://api.com', {
+            "code": 0,
+            "userInfo": {
+                "name": Mock.Random.cname(),
+                "gender": function() {
+                    return sex = Mock.Random.integer(0, 1) == '0'? 'male':'female';
+                }
+            }
+        });
+        // 模拟数据 End ---- 生产环境删除
+
+//         if (!(window.navigator && window.navigator.userAgent.toLowerCase().match(/MicroMessenger/i))) {
+//             document.body.innerHTML = '<h1 style="text-align:center; line-height: 100vh; padding:0; margin:0;">请在微信中打开</h1>';
+//             return;
+//         }
+        var isWechat = window.navigator && window.navigator.userAgent.toLowerCase().match(/MicroMessenger/i) && true;
+
+        var swiper = new Swiper('.swiper-container', {
+            direction: 'vertical',
+            pagination: false,
+            virtualTranslate : true,
+            on: {
+                init: function () {
+                    var print = { s2: false, s3: false, s3: false }; // 打印一次
+                    // 获取用户信息
+                    $.ajax({
+                        type: 'GET',
+                        url: 'http://api.com',
+                        data: {},
+                        beforeSend: function () {
+                            showLoading();
+                        },
+                        success: function (res) {
+                            var data = JSON.parse(res);
+                            if (data.code == 0) {
+                                var gender = data.userInfo.gender == 'male' ? '先生':'女士';
+                                // $('.mapleleaf span em').text(data.userInfo.name + gender);
+                                $('.mapleleaf .txt-content span').html('尊敬的<em>' + data.userInfo.name + '</em>' + gender + '：');
+                            }
+                        },
+                        complete: function () {
+                            closeLoading();
+                        }
+                    })
+                    this.emit('slideChange');
+                }, 
+                slideChange: function () {
+                    // console.log('当前activeIndex: ', this.activeIndex);
+                    switch (this.activeIndex) {
+                        case 0:
+                            setEffect.fn.setPage1();
+                            break;
+                        case 1:
+                            $('.pending-3').addClass('page-3');
+                            setEffect.fn.setPage2();
+                            setTimeout(function(){
+                                if (!print.s2)
+                                print('s2Source', 's2Output');
+                                print.s2 = true;
+                            }, 500)
+                            break;
+                        case 2:
+                            $('.pending-4').addClass('page-4');
+                            setEffect.fn.setPage3();
+                            if (!print.s3)
+                                print('s3Source', 's3Output');
+                                print.s3 = true;
+                            break;
+                        case 3:
+                            setEffect.fn.setPage4();
+                            if (!print.s4)
+                                print('s4Source', 's4Output');
+                                print.s4 = true;
+                            break;
+                        case 4:
+                            if (isWechat) {
+                                $('.btns .wechat').hide();
+                            }
+                            setEffect.fn.showLayer();
+                            break;
+                    }
+                }
+            }
+        });
+
+        // 打印
+        function print(source, output) {
+            var typing = new Typing({
+                source: document.getElementById(source),
+                output: document.getElementById(output),
+                delay: 80
+            });
+            typing.start();
+        }
+
+        // 关弹层
+        $('.close').on('click', function() {
+            swiper.slideTo(3, 300, false);
+            $('.shareLayer').removeClass('fadeIn');
+            $('.shareLayer').css({"z-index":"-99", "opacity":"0"});
+            $('.shareLayer .letter').removeClass('fadeIn');
+            $('.page-4 .txt').show();
+        })
+    });
+
+    (function () {
+    　　if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+    　　    handleFontSize();
+    　　} else {
+    　　if (document.addEventListener) {
+    　　　　document.addEventListener("WeixinJSBridgeReady", handleFontSize, false);
+    　　} else if (document.attachEvent) {
+    　　　　document.attachEvent("WeixinJSBridgeReady", handleFontSize);
+    　　　　document.attachEvent("onWeixinJSBridgeReady", handleFontSize);
+    　　}
+    }
+
+    function handleFontSize() {
+    　　// 设置网页字体为默认大小
+    　　WeixinJSBridge.invoke('setFontSizeCallback', {
+    　　'fontSize': 0
+    　　});
+
+    　　// 重写设置网页字体大小的事件
+    　　WeixinJSBridge.on('menu:setfont', function () {
+    　　　　WeixinJSBridge.invoke('setFontSizeCallback', {
+    　　　　　　'fontSize': 0
+    　　　　});
+    　　});
+    　　}
+    })();
+</script>
+</body>
+</html>

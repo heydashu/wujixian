@@ -1,0 +1,868 @@
+@charset "utf-8";
+@import "common";
+.tips-bg {
+  background: url("../images/scenery/tips.png");
+  background-repeat: no-repeat;
+  background-size: rem(238) auto;
+}
+.tips {
+  position: fixed;
+  bottom: 0;
+  right: rem(24);
+  z-index: 9;
+  bottom: rem(40);
+  height: rem(422/2);
+  > div {
+    float: left;
+    position: relative;
+    height: 100%;
+  }
+  .text {
+		background: url("../images/huacai/tip.png");
+		background-repeat: no-repeat;
+		background-size: rem(238) auto;
+    width: rem(219/2);
+    background-position: -0 -0;
+    margin-right: rem(46);
+  }
+  .cursor {
+    @extend .tips-bg;
+    width: rem(40);
+    height: rem(32);
+    background-size: rem(238*2) auto;
+    background-position: rem(-348) rem(-284);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+.tips2 {
+  height: rem(285/2);
+  .text {
+    width: rem(129/2);
+    height: rem(285/2);
+    background-position: rem(-219/2) -0;
+  }
+}
+.tips3 .text {
+  background-position: rem(-348/2) -0;
+}
+.cursor1 {
+  animation: cursor1 1.5s linear infinite;
+}
+.cursor2 {
+  animation: cursor2 1.5s linear infinite;
+}
+@keyframes cursor1 {
+  to {transform: translateY(-550%)};
+}
+@keyframes cursor2 {
+  to {transform: translateY(-350%)};
+}
+
+.font-style {
+  font-size: rem(36);
+  font-family: "HYb1gj";
+  font-weight: 400;
+  color:rgba(87,53,32,1);
+}
+.slide1 {
+  position: relative;
+  //background: url("../images/hope/p1/bg.jpg") no-repeat center top / cover;
+  .tit-bg {
+  	background-image: url("../images/huacai/p1/tit.png");
+  	background-repeat: no-repeat;
+  	background-size: rem(558) auto;
+		position: absolute;
+  }
+	.page-1 {
+    @extend .fixed-bg;
+		background: url("../images/huacai/p1/sky.png") no-repeat top / cover;
+		background-size: 100%;
+    z-index: 1;
+		.logo {
+			@extend .tit-bg;
+			background-position: rem(-10) rem(-272);
+			width: rem(99);
+			height: rem(100);
+			margin-top: rem(22);
+			margin-left: rem(34);
+			animation-delay: 2.2;
+			z-index: 99;
+		}
+		.title {
+			@extend .tit-bg;
+			background-position: rem(-10) rem(-10);
+			width: rem(538);
+			height: rem(242);
+			margin-top: rem(162);
+			margin-left: rem(114);
+			animation-delay: 2.0s;
+			z-index: 30;
+		}
+
+		.flower{
+			width: rem(750);
+			height: rem(864);
+			background: url("../images/huacai/p1/bg1.png") no-repeat center bottom / cover;
+			position: absolute;
+			bottom: 0;
+			z-index: 20;
+		}
+		.cloud-bg{
+			background-image: url("../images/huacai/p1/cloud.png");
+			background-repeat: no-repeat;
+			background-size: rem(438) auto;
+			position: absolute;
+		}
+		.cloud{
+			@extend .fixed-bg;
+			width: 100%;
+			height: 100%;
+			z-index: 10;
+			.cloud1{
+				@extend .cloud-bg;
+				background-position: rem(-10) rem(-10);
+				width: rem(418);
+				height: rem(23);
+				bottom: rem(1130);
+				right: rem(-16);
+				animation:cloud-an1 4s infinite alternate cubic-bezier(0.5,0.5,0.5,0.5);
+			}
+			.cloud2{
+				@extend .cloud-bg;
+				background-position: rem(-10) rem(-105);
+				width: rem(249);
+				height: rem(22);
+				bottom: rem(1050);
+				left: rem(226);
+				animation:cloud-an2 7s infinite alternate cubic-bezier(0.5,0.5,0.5,0.5);
+			}
+			.cloud3{
+				@extend .cloud-bg;
+				background-position: rem(-10) rem(-147);
+				width: rem(176);
+				height: rem(36);
+				bottom: rem(1000);
+				right: rem(-44);
+				animation:cloud-an1 7s infinite alternate cubic-bezier(0.5,0.5,0.5,0.5);
+			}
+			.cloud4{
+				@extend .cloud-bg;
+				background-position: rem(-206) rem(-147);
+				width: rem(189);
+				height: rem(28);
+				bottom: rem(956);
+				left: rem(-59);
+				animation:cloud-an2 4s infinite alternate cubic-bezier(0.5,0.5,0.5,0.5);
+			}
+			.cloud5{
+				@extend .cloud-bg;
+				background-position: rem(-10) rem(-53);
+				width: rem(213);
+				height: rem(32);
+				bottom: rem(752);
+				left: rem(220);
+				animation:cloud-an2 6s infinite alternate cubic-bezier(0.5,0.5,0.5,0.5);
+			}
+		}
+		.petal-bg{
+			background-image: url("../images/huacai/p1/petal.png");
+			background-repeat: no-repeat;
+			background-size: rem(311) auto;
+			position: absolute;
+		}
+		.petal{
+			@extend .fixed-bg;
+			width: 100%;
+			height: 100%;
+			z-index: 40;
+			.petal1{
+				@extend .petal-bg;
+				background-position: rem(-134) rem(-10);
+				width: rem(73);
+				height: rem(72);
+				top: rem(318);
+				left: rem(90);
+				//transform: translate(0, 0) rotate(-60deg) scale(1);
+				animation: ye-an1 2.2s 1 linear;
+			}
+			.petal2{
+				@extend .petal-bg;
+				background-position: rem(-10) rem(-10);
+				width: rem(104);
+				height: rem(129);
+				top: rem(0);
+				right: rem(-104);
+				transform: translate(0, 0) rotate(-180deg) scale(0.3);
+				animation: ye-an2 10s infinite linear;
+			}
+			.petal3{
+				@extend .petal-bg;
+				background-position: rem(-227) rem(-10);
+				width: rem(74);
+				height: rem(70);
+				top: rem(0);
+				right: rem(-74);
+				transform: translate(0, 0) rotate(-180deg) scale(0.3);
+				animation: ye-an3 10s infinite linear;
+			}
+			.petal4{
+				@extend .petal-bg;
+				background-position: rem(-10) rem(-159);
+				width: rem(66);
+				height: rem(65);
+				top: rem(0);
+				right: rem(-66);
+				transform: translate(0,0) rotate(-180deg) scale(0.3);
+				animation: ye-an4 10s infinite linear;
+			}
+			@keyframes cloud-an1 {
+				to {transform:translateX(50%)};
+			}
+			@keyframes cloud-an2 {
+				to {transform:translateX(-50%)};
+			}
+			@keyframes ye-an1 {
+				from {left: 0;top:0;transform: rotate(-60deg) scale(0.2)}
+				to { transform: translate(0%, 0%) rotate(0deg) scale(1);}
+			}
+			@keyframes ye-an2 {
+				to { transform: translate(-280%, 800%) rotate(0deg) scale(1);}
+			}
+			@keyframes ye-an3 {
+				to { transform: translate(-800%, 2000%) rotate(0deg) scale(1);}
+			}
+			@keyframes ye-an4 {
+				to { transform: translate(-1200%, 2200%) rotate(0deg) scale(1);}
+			}
+		}
+	}
+		
+  .page-2 {
+    @extend .fixed-bg;
+    z-index: 2;
+    opacity: 0;
+    background-color: #5EB23B;
+		background: url("../images/huacai/p2/bg2.png") no-repeat center top / cover;
+		.frame{
+			width: rem(750);
+			height: rem(810);
+			background: url("../images/huacai/p2/frame.png") no-repeat center left / cover;
+			position: absolute;
+			margin-top: rem(30);
+			left: 0;
+		}
+		.model-bg{
+			background-image: url("../images/huacai/p2/model.png");
+			background-repeat: no-repeat;
+			background-size: rem(865) auto;
+			position: absolute;
+		}
+		.desk{
+			@extend .model-bg;
+			background-position: rem(-10) rem(-10);
+			width: rem(491);
+			height: rem(326);
+			bottom: rem(-62);
+			left: rem(0);
+		}
+		
+		.stool{
+			@extend .model-bg;
+			background-position: rem(-521) rem(-391);
+			width: rem(246);
+			height: rem(325);
+			bottom: rem(-57);
+			right: rem(0);
+		}
+		.book{
+			@extend .model-bg;
+			background-position: rem(-313) rem(-356);
+			width: rem(160);
+			height: rem(174);
+			bottom: rem(264);
+			left: rem(0);
+			animation-delay:1s;
+			//animation-duration:1.5s;
+		}
+		.model{
+			@extend .model-bg;
+			background-position: rem(-521) rem(-10);
+			width: rem(334);
+			height: rem(361);
+			bottom: rem(264);
+			left: rem(148);
+			animation-delay:1s;
+			//animation-duration:1.5s;
+		}
+		.vase{
+			@extend .model-bg;
+			background-position: rem(-10) rem(-356);
+			width: rem(283);
+			height: rem(523);
+			bottom: rem(258);
+			right: rem(0);
+			animation-delay:1s;
+			//animation-duration:1.5s;
+		}
+		.slide2-txt {
+			@extend .font-style;
+			color: #fff;
+			text-align: left;
+			margin-top: rem(246);
+			font-size: rem(32);
+			position: absolute;
+			.txt-content {
+				position: absolute;
+				width: rem(374);
+				height: rem(300);
+				padding-left: rem(60);
+				margin-top: rem(0);
+				line-height: rem(54);
+				text-align: justify;
+				letter-spacing:rem(2);
+				color: #fff;
+				.text-str {
+					display: block;
+					em {
+						font-style: normal;
+						font-weight: bold;
+						color: #ffdc1a;
+					}
+				}
+				strong {
+					color: #ffdc1a ;
+				}
+			}
+		}
+  }
+	
+  .page-3 {
+    @extend .fixed-bg;
+    z-index: 3;
+    transition: all .6s;
+		background: url("../images/huacai/p3/sky.png") no-repeat top / cover;
+		background-size: 100%;
+    opacity: 0;
+		.cloud2-bg{
+			background-image: url("../images/huacai/p3/cloud.png");
+			background-repeat: no-repeat;
+			background-size: rem(661) auto;
+			position: absolute;
+		}
+		.cloud{
+			@extend .fixed-bg;
+			width: 100%;
+			height: 100%;
+			z-index: 10;
+			.cloud6{
+				@extend .cloud2-bg;
+				background-position: rem(-287) rem(-106);
+				width: rem(296);
+				height: rem(33);
+				bottom: rem(1142);
+				right: rem(-16);
+				animation:cloud-an1 6s infinite alternate cubic-bezier(0.5,0.5,0.5,0.5);
+			}
+			.cloud7{
+				@extend .cloud2-bg;
+				background-position: rem(-287) rem(-159);
+				width: rem(249);
+				height: rem(22);
+				bottom: rem(1080);
+				left: rem(226);
+				animation:cloud-an2 6s infinite alternate cubic-bezier(0.5,0.5,0.5,0.5);
+			}
+			.cloud8{
+				@extend .cloud2-bg;
+				background-position: rem(-287) rem(-201);
+				width: rem(176);
+				height: rem(36);
+				bottom: rem(1024);
+				right: rem(-12);
+				animation:cloud-an1 6s infinite alternate cubic-bezier(0.5,0.5,0.5,0.5);
+			}
+			.cloud9{
+				@extend .cloud2-bg;
+				background-position: rem(-287) rem(-10);
+				width: rem(364);
+				height: rem(28);
+				bottom: rem(964);
+				left: rem(-59);
+				animation:cloud-an2 6s infinite alternate cubic-bezier(0.5,0.5,0.5,0.5);
+			}
+			.cloud10{
+				@extend .cloud2-bg;
+				background-position: rem(-287) rem(-58);
+				width: rem(364);
+				height: rem(28);
+				bottom: rem(870);
+				left: rem(112);
+				animation:cloud-an1 6s infinite alternate cubic-bezier(0.5,0.5,0.5,0.5);
+			}
+		}
+		.tourist-bg{
+			background-image: url("../images/huacai/p3/person.png");
+			background-repeat: no-repeat;
+			background-size: rem(838) auto;
+			position: absolute;
+		}
+		.town{
+			width: rem(750);
+			height: rem(1076);
+			background: url("../images/huacai/p3/bg3.png") no-repeat center bottom / cover;
+			position: absolute;
+			bottom: 0;
+			z-index: 30;
+			.windmill{
+				@extend .cloud2-bg;
+				background-position: rem(-10) rem(-10);
+				width: rem(257);
+				height: rem(258);
+				bottom: rem(920);
+				right: rem(142);
+				transform: rotate(0deg);
+			}
+			.tourist1{
+				@extend .tourist-bg;
+				background-position: rem(-520) rem(-10);
+				width: rem(311);
+				height: rem(479);
+				bottom: rem(230);
+				right: rem(0);
+				animation-delay:0.5s;
+				//animation-duration:2s;
+			}
+			.tourist2{
+				@extend .tourist-bg;
+				background-position: rem(-10) rem(-10);
+				width: rem(490);
+				height: rem(518);
+				bottom: rem(20);
+				left: rem(0);
+				
+			}
+			.tourist3{
+				@extend .tourist-bg;
+				background-position: rem(-10) rem(-548);
+				width: rem(161);
+				height: rem(232);
+				bottom: rem(0);
+				right: rem(0);
+				
+			}
+			.flash-box {
+				position: absolute;
+				bottom: rem(150);
+				height: rem(400);
+				line-height: rem(400);
+				width: 100%;
+			}
+			.el-flash {
+				animation: falsh 2.6s linear 2s infinite;
+				width: rem(10);
+				height: rem(10);
+				background: #fff;
+				border-radius: 50%;
+				bottom: rem(20);
+				right: rem(20);
+				position: absolute;
+				display: inline-block;
+				vertical-align: bottom;
+				opacity: 0;
+			}
+			@keyframes falsh {
+				0% { opacity: 0; }
+				5% { opacity: 0.5; width: rem(300);  height: rem(300); }
+				10% { opacity: 0; }
+				100% { opacity: 0; }
+			}
+		}
+		
+		.slide3-txt {
+			@extend .font-style;
+			position: absolute;
+			text-align: left;
+			font-size: rem(32);
+			width: 100%;
+			height: rem(272);
+			bottom: rem(860);
+			left: rem(0);
+			letter-spacing:rem(2);
+			color:#2C0F66;
+			animation-delay: 0.5s;
+			z-index:30;
+			> p {
+				padding-left: rem(64);
+				line-height: rem(48);
+			}
+		}
+		@keyframes windmill-an {
+			to { transform: rotate(-360deg);}
+		}
+		.windmill-an{
+			animation:windmill-an 15s infinite linear;
+		}
+  }
+  .page-4 {
+    @extend .fixed-bg;
+    z-index: 4;
+    transition: all .6s;
+    background: url("../images/huacai/p4/bg4.png") no-repeat bottom center / cover;
+    opacity: 0;
+		.person-bg{
+			background-image: url("../images/huacai/p4/character.png");
+			background-repeat: no-repeat;
+			background-size: rem(885) auto;
+			position: absolute;
+		}
+		.person1{
+			@extend .person-bg;
+			background-position: rem(-414) rem(-277);
+			width: rem(249);
+			height: rem(429);
+			bottom: rem(524);
+			right: rem(18);
+			animation-delay:0.5s;
+			//animation-duration:3s;
+		}
+		.person2{
+			@extend .person-bg;
+			background-position: rem(-10) rem(-10);
+			width: rem(384);
+			height: rem(571);
+			bottom: rem(228);
+			left: rem(0);
+		}
+		.person3{
+			@extend .person-bg;
+			background-position: rem(-10) rem(-601);
+			width: rem(362);
+			height: rem(605);
+			bottom: rem(82);
+			right: rem(0);
+		}
+		.person{
+			@extend .person-bg;
+			background-position: rem(-414) rem(-726);
+			width: rem(210);
+			height: rem(444);
+			bottom: rem(500);
+			right: rem(218);
+			animation-delay:0.5s;
+			//animation-duration:3s;
+		}
+		.food{
+			@extend .person-bg;
+			background-position: rem(-414) rem(-10);
+			width: rem(461);
+			height: rem(247);
+			bottom: rem(0);
+			left: rem(0);
+		}
+		.frame3{
+			background-image: url("../images/huacai/p4/frame3.png");
+			background-repeat: no-repeat;
+			background-size: 100%;
+			position: absolute;
+			width: rem(320);
+			height: rem(396);
+			top: rem(30);
+			left: rem(0);
+		}
+    .slide4-txt {
+      @extend .font-style;
+			position: absolute;
+      text-align: left;
+      margin-top: rem(112);
+      width: 100%;
+      height: rem(299);
+			padding: 0;
+			left: 0;
+      z-index: 2;
+      font-size: rem(30);
+			color: #fff;
+      animation-delay: 1s;
+      > p{
+				margin: 0;
+        padding-left: rem(34);
+        line-height: rem(48);
+      }
+    }
+		
+    .show {
+      background: url("../images/hope/p4/person.png");
+      background-repeat: no-repeat;
+      background-size: rem(1480) auto;
+      position: absolute;
+    }
+    .dancer {
+      width: rem(730);
+      height: rem(574);
+      background-position: -0 -0;
+      bottom: rem(520);
+      transform: translateX(-45%);
+    }
+    .dancing {
+      animation: dancing 1s forwards .3s linear;
+    }
+    @keyframes dancing {
+      to {transform: translateX(0);}
+    }
+    
+    // 分享
+ 		.letterHeight{
+ 			margin-top: rem(150) !important;
+		}
+		.ico-bg{
+			background: url("../images/huacai/p5/ico.png");
+			background-repeat: no-repeat;
+			background-size: rem(140) auto;
+		}
+    .shareLayer {
+      @extend .fixed-bg;
+      background:rgba(0,0,0,.7);
+      opacity: 0;
+      .letter {
+        margin: 0 auto;
+        width: rem(585);
+        height: rem(660);
+        background: url("../images/huacai/p5/frame.png") no-repeat top center / cover;
+        margin-top: rem(80);
+        .share-txt {
+          @extend .font-style;
+          text-align: left;
+          font-size: rem(30);
+					letter-spacing:rem(3);
+					margin: 0;
+					padding-top: rem(300);
+					padding-left: rem(120);
+					width: rem(354);
+          color: #fff;
+          line-height: rem(50);
+        }
+      }
+      .btns {
+				.btns-a{
+					display: block;
+					width: rem(500);
+					height: rem(98);
+					line-height: rem(98);
+					border-radius: rem(60);
+					margin: 0 auto;
+					font-size: rem(36);
+					font-family: "HYb1gj";
+					font-weight: 400;
+					color:#DE5815;
+					text-decoration: none;
+					margin-top: rem(60);
+					color: #fff;
+				}
+				.wechat {
+					@extend .btns-a;
+					background:linear-gradient(0deg, #462694 0%, #7C54DC 100%);
+					em {
+						@extend .ico-bg;
+						background-position: rem(-90) rem(-10);
+						width: rem(40);
+						height: rem(41);
+					}
+				}
+				.scope {
+					@extend .btns-a;
+					background:linear-gradient(0deg,#D97E12 0%,#FFCB1B 97%);
+					em {
+						@extend .ico-bg;
+						background-position: rem(-10) rem(-90);
+						width: rem(39);
+						height: rem(40);
+					}
+				}
+				.my-letter {
+					margin-top: rem(60);
+					em {
+						position: relative;
+						top: 1px;
+						width: rem(36);
+						height: rem(32);
+						background: url("../images/ic_congratulations.png") no-repeat center / 100% !important;
+					}
+				}
+        em {
+          display: inline-block;
+          position: relative;
+          margin-right: rem(20);
+          position: relative;
+          top: rem(8);
+        }
+      }
+			.closeHeight{
+				top: rem(176) !important;
+			}
+      .close {
+				@extend .ico-bg;
+				background-position: rem(-10) rem(-10);
+        position: absolute;
+        top: rem(106);
+        right: rem(80);
+        width: rem(60);
+        height: rem(60);
+      }
+    }
+  }
+  .pending-3, .pending-4 {
+    opacity: 0;
+  }
+}
+
+	
+//X
+@media only screen and (min-width: 360px) and (max-width: 375px)and (min-height: 700px){
+	.slide1 .page-1 .title {margin-top: rem(262) !important;}
+	.slide1 .page-1 .petal1{top: rem(418) !important;}
+	.slide1 .page-3 .slide3-txt {bottom: rem(980);}
+  .slide1 .page-4 .frame3 {top:rem(100);}
+	.slide1 .page-4 .letter {margin-top: rem(150) !important;}
+  .slide1 .page-4 .slide4-txt {margin-top: rem(176);}
+	.slide1 .page-4 .close {top: rem(176) !important;}
+	.letterHeight{margin-top: rem(180) !important;}
+	.closeHeight{top: rem(206) !important;}
+}
+
+// XR && XS MAX
+@media only screen and (min-width: 414px) and (min-height: 800px) {
+	.slide1 .page-1 .title {margin-top: rem(262) !important;}
+	.slide1 .page-1 .petal1{top: rem(418) !important;}
+	.slide1 .page-3 .slide3-txt {bottom: rem(980);}
+	.slide1 .page-4 .frame3 {top:rem(100);}
+	.slide1 .page-4 .letter {margin-top: rem(150) !important;}
+	.slide1 .page-4 .slide4-txt {margin-top: rem(176);}
+	.slide1 .page-4 .close {top: rem(176) !important;}
+	.letterHeight{margin-top: rem(180) !important;}
+	.closeHeight{top: rem(206) !important;}
+}
+
+//6 plus && 7 plus && 8 plus 
+@media only screen and (min-width: 414px) and (max-height: 650px) {
+	.slide1 .page-2 {
+		.desk{
+			bottom: rem(-102);
+		}
+		.stool{
+			bottom: rem(-97);
+		}
+		.book{
+			bottom: rem(224);
+		}
+		.model{
+			bottom: rem(224);
+		}
+		.vase{
+			bottom: rem(218);
+		}
+		.slide2-txt {
+			margin-top: rem(206);
+		}
+		.frame{
+			width: rem(750*0.9);
+			height: rem(810*0.9);
+			margin-top: rem(30);
+			left: 0;
+		}
+	}
+	.slide1 .page-3 {
+		.slide3-txt {
+			bottom: rem(814);
+			left:rem(-20);
+			}
+			>p{
+				padding-left: rem(30);
+			}
+			bottom:rem(-20);
+	}
+	.slide1 .page-4 {
+		.person1{
+			bottom: rem(494);
+		}
+		.person2{
+			bottom: rem(198);
+		}
+		.person3{
+			bottom: rem(52);
+		}
+		.person{
+			bottom: rem(470);
+		}
+		.frame3{
+			top: rem(0);
+		}
+		.slide4-txt {
+			margin-top: rem(82);
+		}
+	}
+	.letterHeight{margin-top: rem(80) !important;}
+	.closeHeight{top: rem(106) !important;}
+}
+
+
+@media only screen and (min-width: 360px)and (max-width: 370px) and (max-height: 580px) {
+	.slide1 .page-2 {
+		.desk{
+			bottom: rem(-102);
+		}
+		.stool{
+			bottom: rem(-97);
+		}
+		.book{
+			bottom: rem(224);
+		}
+		.model{
+			bottom: rem(224);
+		}
+		.vase{
+			bottom: rem(218);
+		}
+		.slide2-txt {
+			margin-top: rem(206);
+		}
+		.frame{
+			width: rem(750*0.9);
+			height: rem(810*0.9);
+			margin-top: rem(30);
+			left: 0;
+		}
+	}
+	.slide1 .page-3 {
+		.slide3-txt {
+			bottom: rem(814);
+			left:rem(-20);
+			}
+			>p{
+				padding-left: rem(30);
+			}
+			bottom:rem(-20);
+	}
+	.slide1 .page-4 {
+		.person1{
+			bottom: rem(494);
+		}
+		.person2{
+			bottom: rem(198);
+		}
+		.person3{
+			bottom: rem(52);
+		}
+		.person{
+			bottom: rem(470);
+		}
+		.frame3{
+			top: rem(0);
+		}
+		.slide4-txt {
+			margin-top: rem(82);
+		}
+	}
+	.letterHeight{margin-top: rem(80) !important;}
+	.closeHeight{top: rem(106) !important;}
+}

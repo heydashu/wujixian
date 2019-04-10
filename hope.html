@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>希望之旅</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/css/swiper.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.7.0/animate.min.css" >
+    <link rel="stylesheet" href="./css/hope.css">
+</head>
+<body>
+<!-- 背景音乐 -->
+<audio src="./images/audio.mp3" id="audio" preload="auto" loop>该浏览器不支持audio属性</audio>
+<div id="handlerBtn" class="m-play"></div>
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide slide1">
+            <div class="page-1">
+                <div class="envelope animated fadeInDown"><div class="title"></div></div>
+                <div class="elephant animated fadeInLeft"></div>
+                <div class="leaf leaf-bottom animated fadeIn"></div>
+                <div class="leaf leaf-top animated fadeIn"></div>
+                <!-- 叶子 -->
+                <div class="leaves-box">
+                    <div id="ye1"></div>
+                    <div id="ye2"></div>
+                    <div id="ye3"></div>
+                    <div id="ye4"></div>
+                </div>
+                <!-- 白云 -->
+                <div class="cloud">
+                    <div class="cloud1"></div>
+                    <div class="cloud2"></div>
+                    <div class="cloud3"></div>
+                </div>
+                <div id="ye5" class="animated fadeIn"></div>
+                <div id="ye6" class="animated fadeIn"></div>
+            </div>
+            <div class="page-2">
+                <div class="letter animated">
+                    <p class="txt-content hide" id="s2Source"><span></span>鉴于您在2018年度取得了优异的销售成绩，谨以此表示恭贺，并邀您参加无限极<em>2019年度海外培训希望之旅活动！</em></p>
+                    <p class="txt-content" id="s2Output"></p>
+                </div>
+                <div class="envelope2 animated">
+                    <img src="./images/hope/p2/envelope.png" alt="">
+                    <div id="gift1" class="animated"></div>
+                    <div id="gift2" class="animated"></div>
+                    <div id="gift3" class="animated"></div>
+                    <div id="gift4" class="animated"></div>
+                </div>
+                <div class="fruits-top"></div>
+                <div class="fruits-bottom"></div>
+            </div>
+            <div class="pending-3">
+                <div class="slide3-txt animated">
+                    <p id="s3Source" class="hide">满怀希望，<br>扬帆起航！<br>在旅途中开阔眼界，<br>收获感悟！</p>
+                    <p id="s3Output"></p>
+                </div>
+                <div class="cloud cloud1"></div>
+                <div class="cloud cloud2"></div>
+                <div class="tree tree1 animated"></div>
+                <div class="tree tree2 animated"></div>
+                <div class="tree tree3 animated"></div>
+                <div class="person person1 animated"></div>
+                <div class="person person2 animated"></div>
+                <div class="person person3 animated"></div>
+                <div class="person person4 animated"></div>
+                <div class="selfie"></div>
+                <div class="bird"></div>
+                <div class="tree water water1 animated"></div>
+                <div class="tree water water2 animated"></div>
+            </div>
+            <div class="pending-4">
+                <div class="txt animated">
+                    <p id="s4Source" class="hide">尊享皇室礼遇，<br>感受公司实力！<br>在这里，让视野拓宽，<br>让心灵升华！</p>
+                    <p id="s4Output"></p>
+                </div>
+                <div class="dancer-bg"></div>
+                <div class="show dancer"></div>
+                <div class="show desk1 animated"></div>
+                <div class="show desk2 animated"></div>
+                <div class="show desk3 animated"></div>
+                <div class="smoke"></div>
+                <!-- 分享 -->
+                <div class="shareLayer animated">
+                    <div class="letter animated">
+                        <p class="share-txt">马上查看我的海外培训积分，为自己制定目标，和更多伙伴一起带着梦想去旅行！</p>
+                    </div>
+                    <div class="btns">
+                        <!-- <a class="wechat" href="javascript:;"><em></em>晒一下</a> -->
+                        <a class="scope" href="javascript:;"><em></em>看积分</a>
+                        <a class="wechat my-letter" href="javascript:;"><em></em>我的恭贺函</a>
+                    </div>
+                    <a href="javascript:;" class="close"></a>
+                </div>
+            </div>
+            <div class="tips">
+                <div class="text"></div>
+                <div class="cursor"></div>
+            </div>
+        </div>
+        <div class="swiper-slide slide2"></div>
+        <div class="swiper-slide slide3"></div>
+        <div class="swiper-slide slide4"></div>
+        <div class="swiper-slide slide5"></div>
+    </div>
+</div>
+
+<script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/js/swiper.min.js"></script>
+<script src="./js/swiper.animate1.0.3.min.js"></script>
+<script src="./js/effectHope.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+    // 背景音乐
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('OK', document.getElementById('audio'))
+        function audioAutoPlay() {
+            var audio = document.getElementById('audio');
+                audio.play();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                audio.play();
+            }, false);
+        }
+        audioAutoPlay();
+    });
+
+    var audio = document.getElementById('audio');
+    $("#handlerBtn").bind("touchstart", function () {
+        if(audio !== null) {
+        //检测播放是否已暂停.audio.paused 在播放器播放时返回false.
+        if(audio.paused) {
+            audio.play(); // 播放
+            $("#handlerBtn").attr('class', 'm-play');
+        } else {
+            audio.pause(); // 暂停
+            $("#handlerBtn").attr('class', 'm-play m-pause');
+        }
+        }
+    })
+
+    $(function(){
+        var dpr = window.devicePixelRatio;
+        console.log($(window).width()+ "，" +$(window).height() + "，" + dpr);
+        // if (!(window.navigator && window.navigator.userAgent.toLowerCase().match(/MicroMessenger/i))) {
+        //     document.body.innerHTML = '<h1 style="text-align:center; line-height: 100vh; padding:0; margin:0;">请在微信中打开</h1>';
+        //     return;
+        // }
+        var isWechat = window.navigator && window.navigator.userAgent.toLowerCase().match(/MicroMessenger/i) && true;
+        var baseUrl = 'https://www.easy-mock.com/mock/5be55fa4aa347753782dbc01';    // 模拟数据，在获取真实数据时替换或删除
+
+        var swiper = new Swiper('.swiper-container', {
+            direction: 'vertical',
+            pagination: false,
+            virtualTranslate : true,
+            on: {
+                init: function () {
+                    swiperAnimateCache(this);
+                    swiperAnimate(this);
+                    var print = { s2: false, s3: false, s3: false }; // 打印一次
+                    // 获取用户信息
+                    $.ajax({
+                        type: 'GET',
+                        url: baseUrl + '/userInfo/getProfile',
+                        data: {},
+                        beforeSend: function () {
+                            showLoading();
+                        },
+                        success: function (res) {
+                            if (res.code == '0') {
+                                var data = res.data;
+                                var gender = data.userInfo.gender == 'male' ? '先生':'女士';
+                                $('.page-2 .letter .txt-content span').html('尊敬的<em>' + data.userInfo.name + '</em>' + gender + '：');
+                            }
+                        },
+                        complete: function () {
+                            closeLoading();
+                        }
+                    })
+                    this.emit('slideChange');
+                }, 
+                slideChangeTransitionEnd: function() {
+                    swiperAnimate(this);
+                },
+                slideChange: function () {
+                    // console.log('当前activeIndex: ', this.activeIndex);
+                    var index = this.activeIndex;
+                    if(index == 0) {
+                        $('.tips').attr('class', 'tips');
+                    } else if (index == 3) {
+                        $('.tips').attr('class', 'tips tips2 tips3');
+                    } else {
+                        $('.tips').attr('class', 'tips tips2');
+                    }
+                    switch (this.activeIndex) {
+                        case 0:
+                            setEffect.fn.setPage1();
+                            break;
+                        case 1:
+                            $('.pending-3').addClass('page-3');
+                            setEffect.fn.setPage2();
+                            if (!print.s2)
+                                print('s2Source', 's2Output');
+                                print.s2 = true;
+                            break;
+                        case 2:
+                            $('.pending-4').addClass('page-4');
+                            setEffect.fn.setPage3();
+                            if (!print.s3)
+                                print('s3Source', 's3Output');
+                                print.s3 = true;
+                            break;
+                        case 3:
+                            setEffect.fn.setPage4();
+                            if (!print.s4)
+                                setTimeout(function(){
+                                    print('s4Source', 's4Output');
+                                    print.s4 = true;
+                                }, 1200)
+                            break;
+                        case 4:
+                            if (isWechat) {
+                                $('.btns .wechat').hide();
+                            }
+                            setEffect.fn.showLayer();
+                            break;
+                    }
+                }
+            }
+        });
+
+        // 打印
+        function print(source, output) {
+            var typing = new Typing({
+                source: document.getElementById(source),
+                output: document.getElementById(output),
+                delay: 80
+            });
+            typing.start();
+        }
+
+        // 关弹层
+        $('.close').on('click', function() {
+            swiper.slideTo(3, 300, false);
+            $('.shareLayer').removeClass('fadeIn');
+            $('.shareLayer').css({"z-index":"-99", "opacity":"0"});
+            $('.shareLayer .letter').removeClass('fadeIn');
+            $('.page-4 .txt').show();
+            $('.cursor2').show();
+        })
+    });
+
+    (function () {
+    　　if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+    　　    handleFontSize();
+    　　} else {
+    　　if (document.addEventListener) {
+    　　　　document.addEventListener("WeixinJSBridgeReady", handleFontSize, false);
+    　　} else if (document.attachEvent) {
+    　　　　document.attachEvent("WeixinJSBridgeReady", handleFontSize);
+    　　　　document.attachEvent("onWeixinJSBridgeReady", handleFontSize);
+    　　}
+    }
+
+    function handleFontSize() {
+    　　// 设置网页字体为默认大小
+    　　WeixinJSBridge.invoke('setFontSizeCallback', {
+    　　'fontSize': 0
+    　　});
+
+    　　// 重写设置网页字体大小的事件
+    　　WeixinJSBridge.on('menu:setfont', function () {
+    　　　　WeixinJSBridge.invoke('setFontSizeCallback', {
+    　　　　　　'fontSize': 0
+    　　　　});
+    　　});
+    　　}
+    })();
+</script>
+</body>
+</html>

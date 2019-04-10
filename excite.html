@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>激扬之旅</title>
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/animate.min.css">
+    <link rel="stylesheet" href="./css/excite.css">
+</head>
+<body>
+<!-- <button id="handlerBtn">音乐控制</button> -->
+<audio src="./images/audio.mp3" id="audio" preload="auto" loop>该浏览器不支持audio属性</audio>
+<div id="handlerBtn" class="m-play"></div>
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide slide1">
+            <div class="page-1">
+                <div class="logo animated fadeIn"></div>
+                <div class="title animated fadeIn"></div>
+				<!-- 鱼 -->
+				<div class="fish-t"></div>
+				<div class="fish-l"></div>
+				<div class="fish-r"></div>
+                <!-- 珊瑚 -->
+				<div class="coral-left"></div>
+				<div class="coral-rigth"></div>
+				<!-- 沙滩 -->
+				<div class="sand"></div>
+				<!-- 女孩 -->
+				<div class="girl"></div>
+				<!-- 海星 -->
+				<div class="star1"></div>
+				<div class="star2"></div>
+				<!-- 瓶子 -->
+				<div class="bottle"></div>
+            </div>
+            <div class="page-2">
+				<!-- 绳子 -->
+				<div class="rope"></div>
+				<!-- 叶子 -->
+				<div class="leaf1"></div>
+				<div class="leaf2"></div>
+				
+				<!-- 瓶子 -->
+				<div class="bottle2"></div>
+				<!-- 信纸 -->
+				<div class="letter">
+					<p class="txt-content hide" id="s2Source"><span class="letter-span">尊敬的<em></em><span></span>：</span>鉴于您在2018年度取得了优异的销售成绩，谨以此表示恭贺，并邀您参加无限极<strong>2019年度海外培训激扬之旅活动！</strong></p>
+					<p class="txt-content" id="s2Output"></p>
+				</div>
+				<!-- 水果 -->
+				<div class="fruit"></div>
+				<!-- 叶子 -->
+				<div class="leaf3"></div>
+				<div class="leaf4"></div>
+				<div class="leaf5 animated fadeInUp"></div>
+            </div>
+            <div class="pending-3">
+				<!-- 海洋 -->
+				<div class="sea"></div>
+				<!-- 浪花 -->
+				<div class="wave">
+					<div class="wave1"></div>
+					<div class="wave2"></div>
+					<div class="wave3"></div>
+					<div class="wave4"></div>
+					<div class="wave5"></div>
+					<div class="wave6"></div>
+					<div class="wave7"></div>
+					<div class="wave-fish"></div>
+				</div>
+				<!-- 旗杆 -->
+				<div class="banner"></div>
+				<div class="banner1"></div>
+				<!-- 甲板 -->
+				<div class="deck">
+					<div class="pool"></div>
+					<div class="touris1"></div>
+					<div class="touris2"></div>
+					<div class="ball"></div>
+					<div class="swim"></div>
+				</div>
+				<div class="slide3-txt animated">
+					<p id="s3Source" class="hide">激情飞扬，<br>邂逅碧海蓝天！<br>乘风破浪，<br>畅享无拘无束！<br></p>
+					<p id="s3Output"></p>
+				</div>
+            </div>
+            <div class="pending-4">
+				<!-- 海洋 -->
+				<div class="p4-sea"></div>
+				<!-- 旗杆 -->
+				<div class="p4-banner"></div>
+				<div class="p4-banner1"></div>
+				<!-- 轮船 -->
+				<div class="p4-wave"></div>
+				<div class="cruise"></div>
+				<!-- 海豚 -->
+				<div class="p4-fish"></div>
+				<div class="p4-sea2"></div>
+				<!-- 浪花 -->
+				<div class="p4-wave1"></div>
+				<div class="p4-wave2"></div>
+				<div class="p4-wave3"></div>
+				<!-- 白云 -->
+				<div class="cloud1"></div>
+				<div class="cloud2"></div>
+				<!-- 飞鸟 -->
+				<div class="bird1"></div>
+				<div class="bird2"></div>
+				<!-- 文字 -->
+				<div class="slide4-txt animated">
+					<p id="s4Source" class="hide">提升格局，放大梦想！<br>释放最好的自己，<br>共创无限极最美好的黄金时代！</p>
+					<p id="s4Output"></p>
+				</div>
+				
+                <!-- 分享 -->
+				<div class="shareLayer animated">
+					<div class="share animated">
+						<p class="share-txt">马上查看我的海外培训积分，为自己制定目标，和更多伙伴一起带着梦想去旅行！</p>
+					</div>
+					<div class="btns">
+						<!-- <a class="wechat" href="javascript:;"><em></em>晒一下</a> -->
+                        <a class="scope" href="javascript:;"><em></em>看积分</a>
+                        <a class="wechat my-letter" href="javascript:;"><em></em>我的恭贺函</a>
+					</div>
+					<a href="javascript:;" class="close"></a>
+				</div>
+            </div>
+            <div class="tips">
+                <div class="text"></div>
+                <div class="cursor"></div>
+            </div>
+        </div>
+        <div class="swiper-slide slide2"></div>
+        <div class="swiper-slide slide3"></div>
+        <div class="swiper-slide slide4"></div>
+        <div class="swiper-slide slide5"></div>
+    </div>
+</div>
+
+<script src="./js/zepto.min.js"></script>
+<script src="./js/swiper.min.js"></script>
+<script src="js/effectExcite.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="https://cdn.bootcss.com/Mock.js/1.0.0/mock-min.js"></script>   <!-- 模拟数据，在获取真实数据时删除 -->
+<script>
+    // 背景音乐
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('OK', document.getElementById('audio'))
+        function audioAutoPlay() {
+            var audio = document.getElementById('audio');
+                audio.play();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                audio.play();
+            }, false);
+        }
+        audioAutoPlay();
+    });
+
+    var audio = document.getElementById('audio');
+    $("#handlerBtn").bind("touchstart", function () {
+        if(audio !== null) {
+        //检测播放是否已暂停.audio.paused 在播放器播放时返回false.
+        if(audio.paused) {
+            audio.play(); // 播放
+            $("#handlerBtn").attr('class', 'm-play');
+        } else {
+            audio.pause(); // 暂停
+            $("#handlerBtn").attr('class', 'm-play m-pause');
+        }
+        }
+    })
+
+
+    $(function(){
+        // 模拟数据 Start ---- 生产环境删除
+        Mock.mock('http://api.com', {
+            "code": 0,
+            "userInfo": {
+                "name": Mock.Random.cname(),
+                "gender": function() {
+                    return sex = Mock.Random.integer(0, 1) == '0'? 'male':'female';
+                }
+            }
+        });
+        // 模拟数据 End ---- 生产环境删除
+
+//         if (!(window.navigator && window.navigator.userAgent.toLowerCase().match(/MicroMessenger/i))) {
+//             document.body.innerHTML = '<h1 style="text-align:center; line-height: 100vh; padding:0; margin:0;">请在微信中打开</h1>';
+//             return;
+//         }
+        var isWechat = window.navigator && window.navigator.userAgent.toLowerCase().match(/MicroMessenger/i) && true;
+
+        var swiper = new Swiper('.swiper-container', {
+            direction: 'vertical',
+            pagination: false,
+            virtualTranslate : true,
+            on: {
+                init: function () {
+                    var print = { s2: false, s3: false, s3: false }; // 打印一次
+                    // 获取用户信息
+                    $.ajax({
+                        type: 'GET',
+                        url: 'http://api.com',
+                        data: {},
+                        beforeSend: function () {
+                            showLoading();
+                        },
+                        success: function (res) {
+                            var data = JSON.parse(res);
+                            if (data.code == 0) {
+                                var gender = data.userInfo.gender == 'male' ? '先生':'女士';
+                                $('.letter .letter-span em').text(data.userInfo.name);
+								$('.letter .letter-span span').text(gender);
+                            }
+                        },
+                        complete: function () {
+                            closeLoading();
+                        }
+                    })
+                    this.emit('slideChange');
+                }, 
+                slideChange: function () {
+                    // console.log('当前activeIndex: ', this.activeIndex);
+                    switch (this.activeIndex) {
+                        case 0:
+                            setEffect.fn.setPage1();
+                            break;
+                        case 1:
+                            $('.pending-3').addClass('page-3');
+                            setEffect.fn.setPage2();
+                            setTimeout(function(){
+                                if (!print.s2)
+                                print('s2Source', 's2Output');
+                                print.s2 = true;
+                            }, 1500)
+                            break;
+                        case 2:
+                            $('.pending-4').addClass('page-4');
+                            setEffect.fn.setPage3();
+							setTimeout(function(){
+								if (!print.s3)
+								print('s3Source', 's3Output');
+								print.s3 = true;
+							}, 2000)
+                            
+                            break;
+                        case 3:
+                            setEffect.fn.setPage4();
+							setTimeout(function(){
+								if (!print.s4)
+                                print('s4Source', 's4Output');
+                                print.s4 = true;
+							}, 3000)
+                            break;
+                        case 4:
+                            if (isWechat) {
+                                $('.btns .wechat').hide();
+                            }
+                            setEffect.fn.showLayer();
+                            break;
+                    }
+                }
+            }
+        });
+
+        // 打印
+        function print(source, output) {
+            var typing = new Typing({
+                source: document.getElementById(source),
+                output: document.getElementById(output),
+                delay: 80
+            });
+            typing.start();
+        }
+
+        // 关弹层
+        $('.close').on('click', function() {
+            swiper.slideTo(3, 300, false);
+            $('.shareLayer').removeClass('fadeIn');
+            $('.shareLayer').css({"z-index":"-99", "opacity":"0"});
+            $('.shareLayer .letter').removeClass('fadeIn');
+            $('.page-4 .txt').show();
+        })
+    });
+	
+	(function () {
+	    　　if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+	    　　    handleFontSize();
+	    　　} else {
+	    　　if (document.addEventListener) {
+	    　　　　document.addEventListener("WeixinJSBridgeReady", handleFontSize, false);
+	    　　} else if (document.attachEvent) {
+	    　　　　document.attachEvent("WeixinJSBridgeReady", handleFontSize);
+	    　　　　document.attachEvent("onWeixinJSBridgeReady", handleFontSize);
+	    　　}
+	    }
+	
+	    function handleFontSize() {
+	    　　// 设置网页字体为默认大小
+	    　　WeixinJSBridge.invoke('setFontSizeCallback', {
+	    　　'fontSize': 0
+	    　　});
+	
+	    　　// 重写设置网页字体大小的事件
+	    　　WeixinJSBridge.on('menu:setfont', function () {
+	    　　　　WeixinJSBridge.invoke('setFontSizeCallback', {
+	    　　　　　　'fontSize': 0
+	    　　　　});
+	    　　});
+	    　　}
+	    })();
+</script>
+</body>
+</html>

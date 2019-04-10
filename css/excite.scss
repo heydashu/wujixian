@@ -1,0 +1,1099 @@
+@charset "utf-8";
+@import "common";
+.font-style {
+  font-size: rem(30);
+  font-family: "HYb1gj";
+  color: rgba(156,34,0,1);
+}
+.tips-bg {
+  background: url("../images/scenery/tips.png");
+  background-repeat: no-repeat;
+  background-size: rem(238) auto;
+}
+.tips {
+  position: fixed;
+  bottom: 0;
+  right: rem(24);
+  z-index: 9;
+  bottom: rem(40);
+  height: rem(422/2);
+  > div {
+    float: left;
+    position: relative;
+    height: 100%;
+  }
+  .text {
+		background: url("../images/excite/tip.png");
+		background-repeat: no-repeat;
+		background-size: rem(238) auto;
+    width: rem(219/2);
+    background-position: -0 -0;
+    margin-right: rem(46);
+  }
+  .cursor {
+    @extend .tips-bg;
+    width: rem(40);
+    height: rem(32);
+    background-size: rem(238*2) auto;
+    background-position: rem(-348) rem(-284);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+.tips2 {
+  height: rem(285/2);
+  .text {
+    width: rem(129/2);
+    height: rem(285/2);
+    background-position: rem(-219/2) -0;
+  }
+}
+.tips3 .text {
+  background-position: rem(-348/2) -0;
+}
+.cursor1 {
+  animation: cursor1 1.5s linear infinite;
+}
+.cursor2 {
+  animation: cursor2 1.5s linear infinite;
+}
+.ball-an{
+	animation:ball-an 8s infinite alternate;
+}
+.swim-an{
+	animation:swim-an 5s infinite alternate;
+}
+.wave-an1{
+	animation:wave-an1 8s infinite alternate cubic-bezier(0.5,0.5,0.5,0.5);
+}
+.wave-an2{
+	animation:wave-an2 8s infinite alternate cubic-bezier(0.5,0.5,0.5,0.5);
+}
+.wave-an3{
+	animation:wave-an3 8s infinite alternate cubic-bezier(0.5,0.5,0.5,0.5);
+}
+.fish-an4{
+	animation:fish-an4 30s infinite;
+}
+.cruise-an{
+	animation:cruise-an 3s 1;
+}
+.p4-wave-an{
+	animation:p4-wave-an 3s 1;
+}
+.banner-an{
+	animation:banner-an 3s 1;
+}
+.banner-an1{
+	animation:banner-an1 3s 1;
+}
+.cloud1-an{
+	animation:cloud-an1 5s infinite alternate cubic-bezier(0.5,0.5,0.5,0.5);
+}
+.cloud2-an{
+	animation:cloud-an2 4s infinite alternate cubic-bezier(0.5,0.5,0.5,0.5);
+}
+.fish-an5{
+	animation-delay: 2.5s;
+}
+.wave-an4{
+	animation-delay: 2.5s;
+}
+
+.touris-an{
+	animation-duration:4s;
+}
+@keyframes cursor1 {
+  to {transform: translateY(-550%)};
+}
+@keyframes cursor2 {
+  to {transform: translateY(-350%)};
+}
+@keyframes coral-1{
+	to {transform:translateX(-7%)};
+}
+@keyframes coral-2{
+	to {transform:translateX(15%)};
+}
+@keyframes fish-1{
+	to {transform:translateX(-1000%)};
+}
+@keyframes fish-2{
+	to {transform:translateX(880%)};
+}
+@keyframes fish-3{
+	to {transform:translateX(1300%)};
+}
+@keyframes ball-an{
+	to {transform:translateX(rem(-30))};
+}
+@keyframes swim-an{
+	to {transform:translateX(rem(-40))};
+}
+@keyframes wave-an1{
+	to {transform: translateY(rem(15))};
+}
+@keyframes wave-an2{
+	to {transform: translateY(rem(30))};
+}
+@keyframes wave-an3{
+	to {transform: translateY(rem(60))};
+}
+@keyframes fish-an4{
+	to {transform: translateX(rem(200))};
+}
+@keyframes p4-wave-an{
+	from{right: rem(-200)};
+	to {right: rem(514)};
+}
+@keyframes cruise-an{
+	from{right: rem(-714)};
+	to {right: rem(0)};
+}
+@keyframes banner-an{
+	from{right: rem(-614)};
+	to {right: rem(100)};
+}
+@keyframes banner-an1{
+	from{right: rem(-414)};
+	to {right: rem(300)};
+}
+@keyframes cloud-an1{
+	to {transform: translateX(rem(-60))};
+}
+@keyframes cloud-an2{
+	to {transform: translateX(rem(80))};
+}
+
+
+
+body {
+  // font-family: "HYb1gj", Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  // background: #eee url("../images/excite/p1/sea.png") no-repeat center top / cover;
+}
+
+.slide1 {
+	position: relative;
+	// background: url("../images/scenery/p1/bg.jpg") no-repeat center top / cover;
+	.tit-bg {
+		background-image: url("../images/excite/p1/tit.png");
+		background-repeat: no-repeat;
+		background-size: rem(521) auto;
+	}
+	.coral-bg {
+		background-image: url("../images/excite/p1/coral.png");
+		background-repeat: no-repeat;
+		background-size: rem(506) auto;
+		position: absolute;
+	}
+	.bottle-bg{
+		background-image: url("../images/excite/p1/bottle-girl.png");
+		background-repeat: no-repeat;
+		background-size: rem(516) auto;
+		position: absolute;
+	}
+	.fish-bg{
+		background-image: url("../images/excite/p1/star-fish.png");
+		background-repeat: no-repeat;
+		background-size: rem(248) auto;
+		position: absolute;
+	}
+	
+	.page-1 {
+		@extend .fixed-bg;
+		background: #eee url("../images/excite/p1/sea.png") no-repeat center top / cover;
+		z-index: 1;
+		.logo {
+		  @extend .tit-bg;
+		  background-position: rem(-10) rem(-306);
+		  width: rem(79);
+		  height: rem(80);
+		  margin-top: rem(104);
+		  margin-left: rem(50);
+		  animation-delay: 2.2;
+		  img {
+			width: 100%;
+		  }
+		}
+		.title {
+		  @extend .tit-bg;
+		  background-position: rem(-10) rem(-10);
+		  width: rem(501);
+		  height: rem(276);
+		  margin-top: rem(0);
+				margin-left: rem(140);
+		  img {
+			width: 100%;
+		  }
+		  animation-delay: 2.0s;
+		}
+		.fish-t{
+			@extend .fish-bg;
+			background-position: rem(-153) rem(-202);
+			width: rem(75);
+			height: rem(31);
+			top: rem(142);
+			left: rem(750);
+			animation:fish-1 12s infinite cubic-bezier(1,.75,0.25,0.25);
+		}
+		.fish-l{
+			@extend .fish-bg;
+			background-position: rem(-10) rem(-139);
+			width: rem(85);
+			height: rem(110);
+			top: rem(520);
+			left: rem(0);
+			animation:fish-2 10s infinite cubic-bezier(0.4,1,0.5,0.5);
+		}
+		.fish-r{
+			@extend .fish-bg;
+			background-position: rem(-153) rem(-105);
+			width: rem(58);
+			height: rem(77);
+			top: rem(636);
+			left: rem(0);
+			animation:fish-3 10s infinite cubic-bezier(0.4,0.75,1,0.5);
+		}
+		.coral-left{
+			@extend .coral-bg;
+			background-position: rem(-10) rem(-10);
+			width: rem(313);
+			height: rem(614);
+			//top: rem(312);
+			bottom: rem(404);
+			left: rem(0);
+			animation:coral-1 3s infinite 2s alternate;
+		}
+		.coral-rigth{
+			@extend .coral-bg;
+			background-position: rem(-343) rem(-10);
+			width: rem(153);
+			height: rem(535);
+			//top: rem(204);
+			bottom: rem(596);
+			right: rem(0);
+			animation:coral-2 3s infinite;
+			animation-delay:1s;
+			animation-direction:alternate;
+		}
+		.sand{
+			background-image: url("../images/excite/p1/beach.png");
+			background-repeat: no-repeat;
+			background-size:100%;
+			position: absolute;
+			width: rem(750);
+			height: rem(692);
+			//top: rem(644);
+			bottom: rem(0);
+			left: rem(0);
+		}
+		.girl{
+			@extend .bottle-bg;
+			background-position: rem(-348) rem(-10);
+			width: rem(158);
+			height: rem(326);
+			//top: rem(924);
+			bottom: rem(88);
+			left: rem(380);
+			}
+		.star1{
+			@extend .fish-bg;
+			background-position: rem(-10) rem(-10);
+			width: rem(123);
+			height: rem(109);
+			//top: rem(1106);
+			bottom: rem(120);
+			left: rem(294);
+		}
+		.star2{
+			@extend .fish-bg;
+			background-position: rem(-153) rem(-10);
+			width: rem(85);
+			height: rem(75);
+			//top: rem(996);
+			bottom: rem(270);
+			left: rem(570);
+		}
+		.bottle{
+			@extend .bottle-bg;
+			background-position: rem(-10) rem(-10);
+			width: rem(318);
+			height: rem(365);
+			//top: rem(894);
+			bottom: rem(76);
+			left: rem(84);
+		}
+	}
+	.leaf-bg{
+		background-image: url("../images/excite/p2/leaf.png");
+		background-repeat: no-repeat;
+		background-size: rem(567) auto;
+		position: absolute;
+	}
+	.page-2 {
+		@extend .fixed-bg;
+		z-index: 2;
+		opacity: 0;
+		transition: all .6s;
+		background: url("../images/excite/p2/bg.png") no-repeat center top / cover; 
+		.rope{
+			background: url("../images/excite/p2/2.png");
+			background-repeat: no-repeat;
+			background-size:100%;
+			position: absolute;
+			width: rem(706);
+			height: rem(387);
+			top: rem(780);
+			left: rem(12);
+		}
+		.leaf1{
+			@extend .leaf-bg;
+			background-position: rem(-187) rem(-264);
+			width: rem(115);
+			height: rem(118);
+			top: rem(166);
+			right: rem(0);
+		}
+		.leaf2{
+			@extend .leaf-bg;
+			background-position: rem(-322) rem(-264);
+			width: rem(120);
+			height: rem(109);
+			top: rem(782);
+			right: rem(0);
+		}
+		.leaf3{
+			@extend .leaf-bg;
+			background-position: rem(-10) rem(-10);
+			width: rem(331);
+			height: rem(234);
+			top: rem(1100);
+			left: rem(0);
+		}
+		.leaf4{
+			@extend .leaf-bg;
+			background-position: rem(-361) rem(-10);
+			width: rem(196);
+			height: rem(232);
+			top: rem(1102);
+			right: rem(0);
+		}
+		.leaf5{
+			@extend .leaf-bg;
+			background-position: rem(-10) rem(-264);
+			width: rem(157);
+			height: rem(265);
+			top: rem(220);
+			left: rem(0);
+		}
+		.bottle2{
+			background: url("../images/excite/p2/bottle.png");
+			background-repeat: no-repeat;
+			background-size:100%;
+			position: absolute;
+			width: rem(194);
+			height: rem(359);
+			top: rem(600);
+			left: rem(44);
+		}
+		.letter{
+			@extend .font-style;
+			width: rem(641);
+			height: rem(908);
+			background: url("../images/excite/p2/letter.png") no-repeat center top / cover;
+			margin-top: rem(85);
+			margin-left: rem(64);
+			position: absolute;
+			.txt-content {
+				position: absolute;
+				width: rem(440);
+				height: rem(360);
+				padding-top: rem(110);
+				padding-left: rem(124);
+				line-height: rem(60);
+				text-align: justify;
+				letter-spacing:rem(2);
+				color: #575757;
+				transform:rotate(-4deg);
+				.letter-span {
+					display: block;
+					em {
+						font-style: normal;
+						font-weight: bold;
+						color: #e68840;
+					}
+				}
+				strong {
+					color: #e68840;
+					font-weight: 600;
+					letter-spacing:rem(2);
+					
+				}
+			}
+		}
+		.fruit{
+			width: rem(713);
+			height: rem(637);
+			background: url("../images/excite/p2/fruit.png") no-repeat center top / cover;
+			position: absolute;
+			top: rem(612);
+			left: rem(36);
+		}
+  }
+	.people-bg{
+		background-image: url("../images/excite/p3/people.png");
+		background-repeat: no-repeat;
+		background-size: rem(374) auto;
+		position: absolute;
+	}
+	.wave-bg{
+		background-image: url("../images/excite/p3/wave.png");
+		background-repeat: no-repeat;
+		background-size: rem(497) auto;
+		position: absolute;
+	}
+	.pending-3{
+		opacity: 0;
+	}
+  .page-3 {
+    @extend .fixed-bg;
+    z-index: 3;
+    transition: all .6s;
+    background: url("../images/excite/p3/sky.png") no-repeat center top / cover;
+    opacity: 0;
+ 
+	.sea{
+		width: rem(750);
+		height: rem(1073);
+		background: url("../images/excite/p3/sea.png");
+		position: absolute;
+		top: rem(262);
+		left: rem(0);
+	}
+    .slide3-txt {
+      @extend .font-style;
+      text-align: left;
+      margin-left: rem(450);
+			margin-top: rem(120);
+      width: 100%;
+      height: rem(336);
+      color: #fff;
+			font-size: rem(30);
+			text-shadow: rem(1) rem(1) rem(10) #024d7c;
+			letter-spacing:rem(4);		
+      font-weight: 400;
+      line-height: rem(50);
+			background-position: -0 -0;
+			position: relative;
+			z-index: 99;
+      > p {
+        padding-top: rem(24);
+        padding-left: rem(24);
+      }
+    }
+		.wave{
+			width: 100%;
+			.wave1{
+				@extend .wave-bg;
+				background-position: rem(-10) rem(-138);
+				width: rem(251);
+				height: rem(43);
+				top: rem(258);
+				left: rem(276);
+			}
+			.wave2{
+				@extend .wave-bg;
+				background-position: rem(-10) rem(-307);
+				width: rem(159);
+				height: rem(27);
+				top: rem(320);
+				left: rem(366);
+			}
+			.wave3{
+				@extend .wave-bg;
+				background-position: rem(-10) rem(-201);
+				width: rem(257);
+				height: rem(43);
+				top: rem(346);
+				left: rem(16);
+			}
+			.wave4{
+				@extend .wave-bg;
+				background-position: rem(-10) rem(-254);
+				width: rem(255);
+				height: rem(43);
+				top: rem(370);
+				right: rem(10);
+			}
+			.wave5{
+				@extend .wave-bg;
+				background-position: rem(-10) rem(-74);
+				width: rem(280);
+				height: rem(44);
+				top: rem(500);
+				left: rem(-10);
+			}
+			.wave6{
+				@extend .wave-bg;
+				background-position: rem(-10) rem(-10);
+				width: rem(301);
+				height: rem(44);
+				top: rem(500);
+				right: rem(-20);
+			}
+			.wave7{
+				@extend .wave-bg;
+				background-position: rem(-331) rem(-10);
+				width: rem(156);
+				height: rem(53);
+				top: rem(600);
+				left: rem(0);
+			}
+			.wave-fish{
+				@extend .wave-bg;
+				background-position: rem(-331) rem(-83);
+				width: rem(104);
+				height: rem(43);
+				top: rem(420);
+				right: rem(80);
+			}
+		}
+		.banner{
+			background: url("../images/excite/p4/banner.gif");
+			background-repeat: no-repeat;
+			background-size:100%;
+			position: absolute;
+			width: rem(160);
+			height: rem(144);
+			top: rem(176);
+			left: rem(132);
+		}
+		.banner1{
+			background: url("../images/excite/p3/qigan.png");
+			background-repeat: no-repeat;
+			background-size:95%;
+			position: absolute;
+			width: rem(11);
+			height: rem(360);
+			top: rem(192);
+			left: rem(132);
+		}
+		.deck{
+			background: url("../images/excite/p3/people-boat.png");
+			background-repeat: no-repeat;
+			background-size:100%;
+			position: absolute;
+			width: rem(750);
+			height: rem(993);
+			top: rem(342);
+			left: rem(0);
+			.pool{
+				background: url("../images/excite/p3/pool.png");
+				background-repeat: no-repeat;
+				background-size:100%;
+				width: rem(678);
+				height: rem(394);
+				margin-top: rem(600);
+				margin-left: rem(0);
+			}
+			.touris1{
+				@extend .people-bg;
+				background-position: rem(-200) rem(-441);
+				width: rem(71);
+				height: rem(86);
+				top: rem(802);
+				left: rem(570);
+			}
+			.touris2{
+				@extend .people-bg;
+				background-position: rem(-10) rem(-10);
+				width: rem(354);
+				height: rem(295);
+				top: rem(698);
+				left: rem(172);
+			}
+			.ball{
+				@extend .people-bg;
+				background-position: rem(-304) rem(-325);
+				width: rem(54);
+				height: rem(66);
+				top: rem(860);
+				left: rem(360);
+			}
+			.swim{
+				@extend .people-bg;
+				background-position: rem(-200) rem(-325);
+				width: rem(84);
+				height: rem(96);
+				top: rem(660);
+				left: rem(340);
+			}
+		}
+	}
+	.cloud-bg{
+		background-image: url("../images/excite/p4/cloud.png");
+		background-repeat: no-repeat;
+		background-size: rem(672) auto;
+		position: absolute;
+	}
+  .page-4 {
+    @extend .fixed-bg;
+    z-index: 4;
+    transition: all .6s;
+    background: url("../images/excite/p4/sky.png") no-repeat center bottom / cover;
+    opacity: 0;
+		.p4-sea{
+			background: url("../images/excite/p4/sea.png");
+			background-repeat: no-repeat;
+			background-size:100%;
+			width: rem(750);
+			height: rem(581);
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+		.p4-banner{
+			background: url("../images/excite/p4/banner.gif");
+			background-repeat: no-repeat;
+			background-size:80%;
+			position: absolute;
+			width: rem(206);
+			height: rem(459);
+			position: absolute;
+			bottom: rem(388);
+			right: rem(100);
+		}
+		.p4-banner1{
+			background: url("../images/excite/p4/qigan.png");
+			background-repeat: no-repeat;
+			background-size:100%;
+			position: absolute;
+			width: rem(6);
+			height: rem(325);
+			bottom: rem(505);
+			right: rem(300);
+		}
+		.p4-wave{
+			@extend .cloud-bg;
+			background-position: rem(-230) rem(-405);
+			width: rem(236);
+			height: rem(61);
+			bottom: rem(300);
+			right: rem(514);
+		}
+		.cruise{
+			background: url("../images/excite/p4/cruise.png");
+			background-repeat: no-repeat;
+			background-size:100%;
+			width: rem(723);
+			height: rem(594);
+			position: absolute;
+			bottom: rem(0);
+			right: 0;
+		}
+		.p4-fish{
+			@extend .cloud-bg;
+			background-position: rem(-10) rem(-326);
+			width: rem(200);
+			height: rem(144);
+			bottom: rem(74);
+			left: rem(270);
+		}
+		
+		.p4-wave1{
+			@extend .cloud-bg;
+			background-position: rem(-10) rem(-10);
+			width: rem(652);
+			height: rem(58);
+			bottom: rem(244);
+			right: rem(0);
+		}
+		.p4-wave2{
+			@extend .cloud-bg;
+			background-position: rem(-230) rem(-326);
+			width: rem(406);
+			height: rem(59);
+			bottom: rem(138);
+			right: rem(0);
+		}
+		.p4-wave3{
+			@extend .cloud-bg;
+			background-position: rem(-10) rem(-248);
+			width: rem(558);
+			height: rem(58);
+			bottom: rem(28);
+			right: rem(0);
+		}
+		
+		.cloud1{
+			@extend .cloud-bg;
+			background-position: rem(-297) rem(-88);
+			width: rem(253);
+			height: rem(138);
+			top: rem(312);
+			left: rem(0);
+		}
+		.cloud2{
+			@extend .cloud-bg;
+			background-position: rem(-10) rem(-88);
+			width: rem(267);
+			height: rem(140);
+			top: rem(106);
+			right: rem(0);
+		}
+		.bird1{
+			@extend .cloud-bg;
+			background-position: rem(-570) rem(-88);
+			width: rem(87);
+			height: rem(46);
+			top: rem(200);
+			right: rem(92);
+		}
+		.bird2{
+			@extend .cloud-bg;
+			background-position: rem(-570) rem(-154);
+			width: rem(87);
+			height: rem(46);
+			top: rem(460);
+			right: rem(570);
+		}
+		.p4-sea2{
+			background: url("../images/excite/p4/sea2.png");
+			background-repeat: no-repeat;
+			background-size:100%;
+			width: rem(750);
+			height: rem(67);
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+    .slide4-txt {
+      @extend .font-style;
+			position: absolute;
+      text-align: left;
+      margin-top: rem(120);
+      width: 100%;
+      height: rem(336);
+      color: #fff;
+      font-size: rem(30);
+			letter-spacing:rem(2);
+      font-weight: 400;
+      line-height: rem(50);
+      background-position: -0 -0;
+      > p {
+      	padding-left: rem(46);
+      }
+    }
+    // 分享
+	.ico-bg{
+		background: url("../images/excite/p5/ico.png");
+		background-repeat: no-repeat;
+		background-size: rem(216) auto;
+	}
+	.shareLayer {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background:rgba(0,0,0,.55);
+		opacity: 0;
+		.share {
+			width: rem(622);
+			height: rem(645);
+			background: url("../images/excite/p5/tanchuang.png") no-repeat top center / cover;
+			margin-top: rem(220);
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: rem(56);
+			.share-txt {
+				font-size: rem(30);
+				font-family: "HYb1gj";
+				color: #FFFFFF;
+				text-align: center;
+				padding: rem(72) rem(80) 0 rem(88);
+				line-height: 25px;
+			}
+		}
+		.btns {	
+			a {
+				display: block;
+				width: rem(618);
+				height: rem(98);
+				line-height: rem(98);
+				border-radius: rem(60);
+				margin-top: rem(40);
+				margin-left: auto;
+				margin-right: auto;
+				font-size: rem(42);
+				font-family: "HYb1gj";
+				text-decoration: none;
+			}
+			.wechat {
+				color: #fff;
+				background:linear-gradient(0deg,#ff800f 0%,#fcbc41 100%);
+				em {
+					@extend .ico-bg;
+					background-position: rem(-117) rem(-10);
+					display: inline-block;
+					position: relative;
+					width: rem(36);
+					height: rem(36);
+					top: rem(4);
+					margin-right: rem(20);
+				}
+			}
+			.scope {
+				color: #EE7300;
+				background:linear-gradient(0deg,#ffb034 0%,#ffeb7c 100%);
+				em {
+					@extend .ico-bg;
+					background-position: rem(-173) rem(-10);
+					display: inline-block;
+					position: relative;
+					width: rem(36);
+					height: rem(36);
+					top: rem(4);
+					margin-right: rem(20);
+				}
+			}
+			.my-letter {
+				margin-top: rem(60);
+				em {
+					position: relative;
+					top: 1px;
+					width: rem(35);
+					height: rem(32);
+					background: url("../images/ic_congratulations.png") no-repeat center / 100% !important;
+				}
+			}
+		}
+		.close {
+			position: absolute;
+			width: rem(88);
+			height: rem(88);
+			top: rem(192);
+			right: rem(40);
+			background: url("../images/excite/p5/close.png") no-repeat center;
+			background-size: rem(88) auto;
+		}
+    }
+  }
+  .pending-4 {
+    opacity: 0;
+  }
+  @keyframes c1 {
+    0% {transform: translateX(0px)};
+    100% {transform: translateX(-60px)}
+  }
+  @keyframes c2 {
+    0% {transform: translateX(0px)};
+    100% {transform: translateX(50px)}
+  }
+}
+
+
+@media screen  and (max-width: 320px) {
+  .slide1 .page-4 .shareLayer{
+		.share  {
+			margin-top: rem(170);
+		}
+		.close {
+			top: rem(142);
+		}
+  }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 413px)and (min-height: 640px){
+	.page-2{
+		.leaf3{
+			top: auto !important;
+			bottom: rem(0);
+		}
+		.leaf4{
+			top: auto !important;
+			bottom: rem(0);
+		}
+	}
+	.page-3{
+		.banner{
+			top: auto !important;
+			bottom: rem(1008);
+		}
+		.banner1{
+			top: auto !important;
+			bottom: rem(776);
+		}
+		.deck{
+			top: auto !important;
+			bottom: rem(0);
+		}
+		.wave2{
+			top: rem(320) !important;
+		}
+		.wave3{
+			top: rem(360) !important;
+		}
+		.wave4{
+			top: rem(400) !important;
+		}
+		.wave5{
+			top: rem(530) !important;
+		}
+		.wave6{
+			top: rem(550) !important;
+		}
+		.wave7{
+			top: rem(650) !important;
+		}
+		.wave-fish{
+			top: rem(440) !important;
+		}
+	}
+}
+@media only screen and (min-width: 414px) and (min-height: 700px){
+	.page-2{
+		.leaf3{
+			top: auto !important;
+			bottom: rem(0);
+		}
+		.leaf4{
+			top: auto !important;
+			bottom: rem(0);
+		}
+	}
+	.page-3{
+		.banner{
+			top: auto !important;
+			bottom: rem(1008);
+		}
+		.banner1{
+			top: auto !important;
+			bottom: rem(776);
+		}
+		.deck{
+			top: auto !important;
+			bottom: rem(0);
+		}
+		.wave2{
+			top: rem(320) !important;
+		}
+		.wave3{
+			top: rem(360) !important;
+		}
+		.wave4{
+			top: rem(400) !important;
+		}
+		.wave5{
+			top: rem(530) !important;
+		}
+		.wave6{
+			top: rem(550) !important;
+		}
+		.wave7{
+			top: rem(650) !important;
+		}
+		.wave-fish{
+			top: rem(440) !important;
+		}
+	}
+}
+
+//安卓小屏
+@media only screen and (min-width: 360px) and (max-width: 370px) and (max-height: 580px) {
+	.slide1 .page-1 {
+			.logo {
+				margin-top: rem(84);
+			}
+			.title {
+				margin-top: rem(0);
+			}
+			.fish-t{
+				top: rem(122);
+			}
+			.fish-l{
+				top: rem(480);
+			}
+			.fish-r{
+				top: rem(596);
+			}
+			.coral-left{
+				bottom: rem(344);
+			}
+			.coral-rigth{
+				bottom: rem(480);
+			}
+			.sand{
+				bottom: rem(-60);
+			}
+			.girl{
+				bottom: rem(28);
+			}
+			.star1{
+				bottom: rem(60);
+			}
+			.star2{
+				bottom: rem(210);
+			}
+			.bottle{
+				bottom: rem(16);
+			}
+	}
+	.slide1 .page-3 {
+		.sea{
+			top: rem(242);
+		}
+		.slide3-txt {
+			margin-top: rem(60);
+		}
+		.wave{
+			.wave1{
+				top: rem(238);
+			}
+			.wave2{
+				top: rem(280);
+			}
+			.wave3{
+				top: rem(306);
+			}
+			.wave4{
+				top: rem(330);
+			}
+			.wave5{
+				top: rem(460);
+			}
+			.wave6{
+				top: rem(440);
+			}
+			.wave7{
+				top: rem(560);
+			}
+			.wave-fish{
+				top: rem(380);
+			}
+		}
+		.banner{
+			top: rem(156);
+		}
+		.banner1{
+			top: rem(172);
+		}
+		.deck{
+			top: rem(260);
+		}
+	}
+	.slide1 .page-4 {
+		.bird1{
+			top: rem(200);
+		}
+		.bird2{
+			top: rem(420);
+			right: rem(500);
+		}
+		.slide4-txt {
+			margin-top: rem(90);
+		}
+	}
+	
+}
